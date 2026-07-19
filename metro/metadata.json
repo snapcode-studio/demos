@@ -1,8 +1,0 @@
-{
-  "name": "Pizzeria METRO",
-  "description": "Najlepsza lokalna pizzeria w Skierniewicach oferująca szeroki wybór comfort foodu i błyskawiczną dostawę.",
-  "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
-}
