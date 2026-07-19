@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Łapa Barber Shop | Dąbrowa Górnicza – Profesjonalny Barber</title>
+  <meta name="description" content="Łapa Barber Shop – industrialny klimat, vintage styl, profesjonalne strzyżenie i pielęgnacja brody w Dąbrowie Górniczej. Zarezerwuj wizytę przez Booksy." />
+  <meta name="keywords" content="barber, fryzjer męski, Dąbrowa Górnicza, strzyżenie, broda, Łapa Barber Shop" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-content">
+      <a href="#hero" class="logo">
+        <span class="logo-symbol">✦</span>
+        ŁAPA BARBER SHOP
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#cennik" class="nav-link">Cennik</a>
+        <a href="#klimat" class="nav-link">O nas</a>
+        <a href="#zespol" class="nav-link">Zespół</a>
+        <a href="#opinie" class="nav-link">Opinie</a>
+        <a href="https://booksy.com/pl-pl/101966_lapa-barber-shop_barber-shop_12293_dabrowa-gornicza" target="_blank" rel="noopener" class="nav-cta">Zarezerwuj ↗</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav-gold-line"></div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-particles" id="heroParticles"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">✦ Dąbrowa Górnicza ✦</div>
+      <h1 class="hero-title">
+        <span class="line-1">TWÓJ STYL.</span>
+        <span class="line-2 gold">TWOJE ZASADY.</span>
+      </h1>
+      <p class="hero-sub">
+        Luźna atmosfera · Dobra muzyka · Zimne piwo<br>
+        Profesjonalne cięcie, które mówi samo za siebie.
+      </p>
+      <div class="hero-actions">
+        <a href="https://booksy.com/pl-pl/101966_lapa-barber-shop_barber-shop_12293_dabrowa-gornicza" target="_blank" rel="noopener" class="btn-primary" id="heroCta">
+          Umów Wizytę na Booksy
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#cennik" class="btn-ghost">Zobacz Cennik</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </header>
+
+  <!-- ===================== STATS BAR ===================== -->
+  <section class="stats-bar">
+    <div class="container stats-grid">
+      <div class="stat-item" data-target="500" data-suffix="+">
+        <span class="stat-number" id="stat-clients">0</span>
+        <span class="stat-label">Zadowolonych Klientów</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item" data-target="5" data-suffix=".0/5.0">
+        <span class="stat-number" id="stat-years">0</span>
+        <span class="stat-label">Średnia Ocen</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item" data-target="2714" data-suffix="">
+        <span class="stat-number" id="stat-rating">0</span>
+        <span class="stat-label">Opinii na Booksy</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item" data-target="2" data-suffix=" lokale">
+        <span class="stat-number" id="stat-locations">0</span>
+        <span class="stat-label">Lokalizacje</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CENNIK ===================== -->
+  <section id="cennik" class="section cennik-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Przejrzyste Ceny</span>
+        <h2 class="section-title">USŁUGI & CENNIK</h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="price-grid">
+        <div class="price-card fade-in" data-delay="0">
+          <div class="price-card-icon">✂</div>
+          <div class="price-card-body">
+            <h3>Buzz Cut (maszynką jedna długość)</h3>
+            <p>30 min</p>
+          </div>
+          <div class="price-card-footer">
+            <span class="price-badge">60,00 zł</span>
+          </div>
+        </div>
+        <div class="price-card fade-in" data-delay="100">
+          <div class="price-card-icon">🪒</div>
+          <div class="price-card-body">
+            <h3>Broda</h3>
+            <p>30 min</p>
+          </div>
+          <div class="price-card-footer">
+            <span class="price-badge">70,00 zł</span>
+          </div>
+        </div>
+        <div class="price-card fade-in" data-delay="200">
+          <div class="price-card-icon">💈</div>
+          <div class="price-card-body">
+            <h3>Strzyżenie męskie (od 10 lat)</h3>
+            <p>1 godz.</p>
+          </div>
+          <div class="price-card-footer">
+            <span class="price-badge">90,00 zł</span>
+          </div>
+        </div>
+        <div class="price-card fade-in" data-delay="300">
+          <div class="price-card-icon">⚡</div>
+          <div class="price-card-body">
+            <h3>Buzz Cut + Broda</h3>
+            <p>1 godz.</p>
+          </div>
+          <div class="price-card-footer">
+            <span class="price-badge">100,00 zł</span>
+          </div>
+        </div>
+        <div class="price-card price-card--featured fade-in" data-delay="400">
+          <div class="price-card-badge-top">BESTSELLER</div>
+          <div class="price-card-icon">👑</div>
+          <div class="price-card-body">
+            <h3>Combo-strzyżenie+broda</h3>
+            <p>1 godz.</p>
+          </div>
+          <div class="price-card-footer">
+            <span class="price-badge price-badge--big">130,00 zł</span>
+          </div>
+        </div>
+      </div>
+      <div class="cennik-cta fade-in">
+        <a href="https://booksy.com/pl-pl/101966_lapa-barber-shop_barber-shop_12293_dabrowa-gornicza" target="_blank" rel="noopener" class="btn-primary">
+          Zarezerwuj Termin przez Booksy ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALERIA ===================== -->
+  
+
+  <!-- ===================== KLIMAT ===================== -->
+  <section id="klimat" class="section klimat-section">
+    <div class="container">
+      <div class="klimat-grid">
+        <div class="klimat-image fade-in">
+          <div class="klimat-image-frame">
+            <img
+              src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80"
+              alt="Industrialne wnętrze Łapa Barber Shop"
+              loading="lazy"
+            />
+          </div>
+          <div class="klimat-image-accent"></div>
+        </div>
+        <div class="klimat-text fade-in">
+          <span class="section-tag">Nasze Miejsce</span>
+          <h2 class="section-title text-left">O <span class="gold">NAS</span></h2>
+          <div class="title-line title-line--left"></div>
+          <p class="klimat-desc">
+            Łapa Barber Shop to miejsce, w którym strzyżemy klasycznie, golimy oraz ogarniamy brody.
+            Luźna atmosfera, dobra muzyka i zawsze pełna lodówka! W naszej gablocie znajdziecie wszystko czego potrzebujecie dla swoich włosów i brody!
+          </p>
+          <ul class="klimat-features">
+            <li>
+              <span class="feature-icon">🎵</span>
+              <div>
+                <strong>Muzyka, która gra</strong>
+                <span>Od jazzu po rock – zawsze dobrana do klimatu</span>
+              </div>
+            </li>
+            <li>
+              <span class="feature-icon">🍺</span>
+              <div>
+                <strong>Zimne piwo w lodówce</strong>
+                <span>Bo wizyta u barbera to wydarzenie, nie obowiązek</span>
+              </div>
+            </li>
+            <li>
+              <span class="feature-icon">🏭</span>
+              <div>
+                <strong>Industrialny klimat</strong>
+                <span>Surowa cegła, stal i drewno – autentyczny styl</span>
+              </div>
+            </li>
+            <li>
+              <span class="feature-icon">✂️</span>
+              <div>
+                <strong>Rzemieślnicy z pasją</strong>
+                <span>Każde cięcie to projekt – doradzimy co najlepiej pasuje</span>
+              </div>
+            </li>
+            <li>
+              <span class="feature-icon">📍</span>
+              <div>
+                <strong>3-go Maja 5, 41-300 Dąbrowa Górnicza</strong>
+                <span>W samym centrum – łatwy parking, dobry dojazd</span>
+              </div>
+            </li>
+          </ul>
+          <div class="klimat-hours">
+            <div class="hours-row">
+              <span class="hours-day">Poniedziałek – Piątek</span>
+              <span class="hours-time gold">09:00 – 18:00</span>
+            </div>
+            <div class="hours-row">
+              <span class="hours-day">Sobota</span>
+              <span class="hours-time gold">09:00 – 14:00</span>
+            </div>
+            <div class="hours-row">
+              <span class="hours-day">Niedziela</span>
+              <span class="hours-time closed">Zamknięte</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ZESPÓŁ ===================== -->
+  <section id="zespol" class="section zespol-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Poznaj Naszych Barberów</span>
+        <h2 class="section-title">ZESPÓŁ</h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="team-grid">
+        <div class="team-card fade-in" data-delay="0">
+          <h3>Siwy</h3>
+        </div>
+        <div class="team-card fade-in" data-delay="100">
+          <h3>Michał</h3>
+        </div>
+        <div class="team-card fade-in" data-delay="200">
+          <h3>Bartek</h3>
+        </div>
+        <div class="team-card fade-in" data-delay="300">
+          <h3>Adrian</h3>
+        </div>
+        <div class="team-card fade-in" data-delay="400">
+          <h3>CZACHA (Damian)</h3>
+        </div>
+        <div class="team-card fade-in" data-delay="500">
+          <h3>Krzysiek</h3>
+        </div>
+        <div class="team-card fade-in" data-delay="600">
+          <h3>Bartek Witas</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OPINIE ===================== -->
+  <section id="opinie" class="section opinie-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Co Mówią Klienci</span>
+        <h2 class="section-title">OPINIE</h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-in" data-delay="0">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Jak zwykle pełen profesjonalizm"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MJ</div>
+            <div>
+              <strong>Mariusz J.</strong>
+              <span>Combo-strzyżenie+broda<br>Barber: Adrian</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in" data-delay="150">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Obsługa i atmosfera jak zwykle Top 💪🏻✂️"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">DC</div>
+            <div>
+              <strong>Dawid C.</strong>
+              <span>Combo-strzyżenie+broda<br>Barber: Bartek</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in" data-delay="300">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "klasa"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">KW</div>
+            <div>
+              <strong>Kacper W.</strong>
+              <span>Strzyżenie męskie (od 10 lat)<br>Barber: Adrian</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== KONTAKT / FOOTER ===================== -->
+  <footer id="kontakt" class="footer">
+    <div class="footer-top">
+      <div class="container footer-top-content">
+        <div class="footer-cta-block fade-in">
+          <h2>GOTOWY NA NOWY<br><span class="gold">WYGLĄD?</span></h2>
+          <p>Zarezerwuj wizytę przez Booksy w kilka sekund. Zero czekania, pełna wygoda.</p>
+          <a href="https://booksy.com/pl-pl/101966_lapa-barber-shop_barber-shop_12293_dabrowa-gornicza" target="_blank" rel="noopener" class="btn-primary">
+            Zarezerwuj przez Booksy ↗
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-main">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-symbol">✦</span>
+            ŁAPA BARBER SHOP
+          </div>
+          <p>Industrialny klimat, vintage styl i profesjonalne rzemiosło w sercu Dąbrowy Górniczej.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/lapabarbershop" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">FB</a>
+            <a href="https://www.instagram.com/lapa_barbershop_dg/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">IG</a>
+            <a href="https://booksy.com/pl-pl/101966_lapa-barber-shop_barber-shop_12293_dabrowa-gornicza" target="_blank" rel="noopener" class="social-link" aria-label="Booksy">💈</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Lokalizacja</h4>
+          <p>3-go Maja 5<br>41-300 Dąbrowa Górnicza</p>
+          <a href="https://maps.google.com/?q=3-go+Maja+5,+Dąbrowa+Górnicza" target="_blank" rel="noopener" class="footer-map-link">
+            Otwórz w Google Maps ↗
+          </a>
+        </div>
+        <div class="footer-col">
+          <h4>Godziny Otwarcia</h4>
+          <div class="footer-hours">
+            <span>Pn – Pt</span><span class="gold">09:00 – 18:00</span>
+            <span>Sobota</span><span class="gold">09:00 – 14:00</span>
+            <span>Niedziela</span><span class="closed">Zamknięte</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Udogodnienia</h4>
+          <ul class="footer-facilities" style="list-style: none; padding: 0; color: #aaa; font-size: 0.95rem; line-height: 1.8;">
+            <li><span style="color:var(--gold); margin-right: 8px;">✔</span>Wi-Fi</li>
+            <li><span style="color:var(--gold); margin-right: 8px;">✔</span>Dostępne dla niepełnosprawnych</li>
+            <li><span style="color:var(--gold); margin-right: 8px;">✔</span>Zwierzęta dozwolone</li>
+            <li><span style="color:var(--gold); margin-right: 8px;">✔</span>Przyjazne dla dzieci</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>© 2026 Łapa Barber Shop. Wszelkie prawa zastrzeżone.</p>
+        <p>Projekt & realizacja: <span class="gold">Snap Code Studio</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== FLOATING CTA ===================== -->
+  <a href="https://booksy.com/pl-pl/101966_lapa-barber-shop_barber-shop_12293_dabrowa-gornicza" target="_blank" rel="noopener" class="floating-cta" id="floatingCta" aria-label="Zarezerwuj wizytę">
+    <span class="floating-cta-icon">💈</span>
+    <span class="floating-cta-text">Umów się</span>
+  </a>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

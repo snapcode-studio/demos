@@ -1,0 +1,6 @@
+{
+  "name": "Pizzeria Bianco",
+  "description": "Oficjalna strona internetowa Pizzerii Bianco Forno a legna w Skierniewicach.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

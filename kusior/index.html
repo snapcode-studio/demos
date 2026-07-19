@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dominika Kusior – Mobilne Fryzjerstwo | Cały Śląsk</title>
+  <meta name="description" content="Luksusowe usługi fryzjerskie z dojazdem do Twojego domu. Stylizacja ślubna, balayage, koloryzacja i zabiegi regeneracyjne na terenie całego Śląska. Umów wizytę już dziś." />
+  <meta name="keywords" content="mobilne fryzjerstwo, fryzjer z dojazdem, Śląsk, balayage, stylizacja ślubna, koloryzacja, Dominika Kusior" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="logo">
+        <span class="logo-first">Dominika</span>
+        <span class="logo-last">Kusior</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#uslugi" class="nav-link">Usługi</a></li>
+        <li><a href="#dlaczego" class="nav-link">Dlaczego mobilnie?</a></li>
+        <li><a href="#opinie" class="nav-link">Opinie</a></li>
+        <li><a href="#kontakt" class="nav-link nav-cta">Umów Wizytę</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile overlay menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Zamknij menu">✕</button>
+    <nav class="mobile-nav">
+      <a href="#uslugi" class="mobile-nav-link">Usługi</a>
+      <a href="#dlaczego" class="mobile-nav-link">Dlaczego mobilnie?</a>
+      <a href="#opinie" class="mobile-nav-link">Opinie</a>
+      <a href="#kontakt" class="mobile-nav-link mobile-nav-cta">Umów Wizytę</a>
+    </nav>
+    <p class="mobile-menu-footer">Mobilne Fryzjerstwo · Cały Śląsk</p>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       HERO
+  ═══════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+
+    <!-- Decorative particles -->
+    <div class="hero-particles">
+      <span class="particle p1"></span>
+      <span class="particle p2"></span>
+      <span class="particle p3"></span>
+      <span class="particle p4"></span>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow fade-up">✦ Mobilne Fryzjerstwo Premium ✦</p>
+      <h1 class="hero-title fade-up delay-1">
+        Piękne włosy.<br />
+        <em>W Twoim domu.</em>
+      </h1>
+      <p class="hero-subtitle fade-up delay-2">
+        Profesjonalna stylizacja ślubna, koloryzacja i pielęgnacja<br />
+        z dojazdem do Ciebie na terenie całego Śląska.
+      </p>
+      <div class="hero-actions fade-up delay-3">
+        <a href="#kontakt" class="btn-primary" id="heroCta">Umów Wizytę</a>
+        <a href="#uslugi" class="btn-ghost">Zobacz Usługi</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint fade-up delay-4">
+      <span>Przewiń</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       SERVICES
+  ═══════════════════════════════════ -->
+  <section class="services-section section" id="uslugi">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Oferta</p>
+        <h2 class="section-title">Zakres Usług</h2>
+        <p class="section-subtitle">Każda usługa wykonana z pasją, precyzją i najwyższą jakością materiałów.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card glass-card reveal delay-1">
+          <div class="service-icon-wrap">
+            <svg class="service-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 4C24 4 12 14 12 26C12 32.627 17.373 38 24 38C30.627 38 36 32.627 36 26C36 14 24 4 24 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M18 28C18 28 20 32 24 32C28 32 30 28 30 28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M16 44L24 38L32 44" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Stylizacja Ślubna</h3>
+          <p>Eleganckie upięcia i fryzury próbne, idealnie dobrane do sukni i Twojego stylu. Pełen profesjonalizm w najważniejszym dniu Twojego życia.</p>
+          <div class="service-tag">Ślub &amp; Okazje Specjalne</div>
+        </div>
+
+        <div class="service-card glass-card reveal delay-2">
+          <div class="service-icon-wrap">
+            <svg class="service-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="10" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M24 4V8M24 40V44M4 24H8M40 24H44" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M10.1 10.1L13 13M35 35L37.9 37.9M10.1 37.9L13 35M35 13L37.9 10.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Koloryzacja</h3>
+          <p>Nowoczesne techniki farbowania – balayage, sombre, refleksy, ombre – przy użyciu najwyższej klasy profesjonalnych farb i rozjaśniaczy.</p>
+          <div class="service-tag">Balayage · Sombre · Ombre</div>
+        </div>
+
+        <div class="service-card glass-card reveal delay-3">
+          <div class="service-icon-wrap">
+            <svg class="service-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 8L32 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M12 16C12 16 16 12 24 12C32 12 36 16 36 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M14 26L34 26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M18 36L30 36" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M10 42H38" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Cięcie Damskie</h3>
+          <p>Precyzyjne strzyżenie dopasowane do kształtu twarzy, struktury włosów i Twojego stylu życia. Końcowy efekt, który Cię zachwyci.</p>
+          <div class="service-tag">Fryzury na co dzień &amp; okazje</div>
+        </div>
+
+        <div class="service-card glass-card reveal delay-4">
+          <div class="service-icon-wrap">
+            <svg class="service-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 6C24 6 8 16 8 28C8 36.837 15.163 44 24 44C32.837 44 40 36.837 40 28C40 16 24 6 24 6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M24 26C24 26 18 22 18 18C18 15.791 19.791 14 22 14C23.105 14 24 14.895 24 14.895C24 14.895 24.895 14 26 14C28.209 14 30 15.791 30 18C30 22 24 26 24 26Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Zabiegi Regeneracyjne</h3>
+          <p>Głęboka regeneracja i odbudowa struktury włosów za pomocą keratyny, botoksu włosowego oraz masek profesjonalnej klasy.</p>
+          <div class="service-tag">Keratyna · Botoks · Pielęgnacja</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       WHY MOBILE
+  ═══════════════════════════════════ -->
+  <section class="why-section section" id="dlaczego">
+    <div class="container">
+      <div class="why-layout">
+        <div class="why-image-col reveal">
+          <div class="why-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=900&q=85"
+              alt="Profesjonalna stylizacja włosów w domu klientki"
+              loading="lazy"
+            />
+            <div class="why-image-badge">
+              <span class="badge-number">100%</span>
+              <span class="badge-text">Prywatność<br />i komfort</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-text-col">
+          <div class="section-header text-left reveal">
+            <p class="section-label">Przewaga</p>
+            <h2 class="section-title">Dlaczego mobilnie?</h2>
+            <p class="section-subtitle">Fryzjerstwo mobilne to nie kompromis – to luksus dostosowany do Twojego życia.</p>
+          </div>
+
+          <div class="benefits-list">
+
+            <div class="benefit-item reveal delay-1">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 32 32" fill="none"><path d="M16 2C16 2 6 10 6 20C6 25.523 10.477 30 16 30C21.523 30 26 25.523 26 20C26 10 16 2 16 2Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M11 21L15 25L21 17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="benefit-text">
+                <h4>Dojazd do Twojego domu</h4>
+                <p>Przyjeżdżam z profesjonalnym sprzętem i oświetleniem bezpośrednio do Ciebie. Cały Śląsk w zasięgu.</p>
+              </div>
+            </div>
+
+            <div class="benefit-item reveal delay-2">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="1.4"/><path d="M16 9V16L21 19" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="benefit-text">
+                <h4>Elastyczne godziny</h4>
+                <p>Planuję wizytę według Twojego grafiku – rano, wieczorami, w weekendy. Ty decydujesz, kiedy.</p>
+              </div>
+            </div>
+
+            <div class="benefit-item reveal delay-3">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 32 32" fill="none"><path d="M16 4C16 4 8 10 8 18C8 22.418 11.582 26 16 26C20.418 26 24 22.418 24 18C24 10 16 4 16 4Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M12 20C12 20 14 22 16 22C18 22 20 20 20 20" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              </div>
+              <div class="benefit-text">
+                <h4>Uwaga 1 na 1</h4>
+                <p>Żadnych kolejek, pośpiechu ani rozproszenia. Podczas każdej wizyty jesteś moją jedyną klientką.</p>
+              </div>
+            </div>
+
+            <div class="benefit-item reveal delay-4">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 32 32" fill="none"><rect x="5" y="13" width="22" height="16" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M11 13V9C11 6.239 13.239 4 16 4C18.761 4 21 6.239 21 9V13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="16" cy="21" r="2" fill="currentColor"/></svg>
+              </div>
+              <div class="benefit-text">
+                <h4>Bezpieczeństwo i intymność</h4>
+                <p>Własna przestrzeń, zaufane narzędzia, certyfikowane kosmetyki. Twój komfort i higiena to priorytet.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       GALLERY
+  ═══════════════════════════════════ -->
+  
+
+  <!-- ═══════════════════════════════════
+       TESTIMONIALS
+  ═══════════════════════════════════ -->
+  <section class="testimonials-section section" id="opinie">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Opinie</p>
+        <h2 class="section-title">Co Mówią Klientki</h2>
+        <p class="section-subtitle">Autentyczne opinie kobiet, które doświadczyły mobilnego luksusu.</p>
+      </div>
+
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card glass-card reveal delay-1">
+          <div class="stars" aria-label="5 gwiazdek">★★★★★</div>
+          <blockquote>
+            "Dominika przyjechaała do mnie dzień przed ślubem i dosłownie spełniła moje marzenie o fryzurze. Upięcie trzymało cały wieczór, było idealne do sukni. Szczerze polecam każdej pannie młodej!"
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">MK</div>
+            <div class="author-info">
+              <strong>Monika K.</strong>
+              <span>Katowice · Stylizacja Ślubna</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card glass-card reveal delay-2">
+          <div class="stars" aria-label="5 gwiazdek">★★★★★</div>
+          <blockquote>
+            "Robiłam balayage po raz pierwszy i bałam się, ale Dominika świetnie doradziła odcień i efekt jest naturalny, dokładnie taki jak chciałam. Nie ma mowy żebym wróciła do zwykłego salonu!"
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">AW</div>
+            <div class="author-info">
+              <strong>Agnieszka W.</strong>
+              <span>Gliwice · Balayage</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card glass-card reveal delay-3">
+          <div class="stars" aria-label="5 gwiazdek">★★★★★</div>
+          <blockquote>
+            "Botoks włosowy zrobiony u mnie w domu, herbata w ręku i zero stresu. Włosy wyglądają jak nigdy dotąd – błyszczące, gładkie, miękkie. Niesamowite uczucie luksusu bez wychodzenia z domu."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">JN</div>
+            <div class="author-info">
+              <strong>Joanna N.</strong>
+              <span>Sosnowiec · Zabieg Regeneracyjny</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       CONTACT FORM
+  ═══════════════════════════════════ -->
+  <section class="contact-section section" id="kontakt">
+    <div class="contact-bg"></div>
+    <div class="container">
+      <div class="contact-layout">
+
+        <div class="contact-info reveal">
+          <p class="section-label">Kontakt</p>
+          <h2 class="section-title text-left">Umów Wizytę</h2>
+          <p class="contact-desc">Wypełnij formularz lub napisz do mnie na Facebooku. Odpiszę najszybciej jak mogę i dobierzemy razem idealny termin.</p>
+
+          <div class="contact-details">
+            <div class="contact-detail-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C8.134 2 5 5.134 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.134 15.866 2 12 2Z" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.4"/></svg>
+              <span>Cały Śląsk · Dojazd do Ciebie</span>
+            </div>
+            <div class="contact-detail-item">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.4"/><path d="M12 7V12L15 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <span>Elastyczne godziny · Weekendy dostępne</span>
+            </div>
+            <div class="contact-detail-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M18 2H6C4.895 2 4 2.895 4 4V20C4 21.105 4.895 22 6 22H18C19.105 22 20 21.105 20 20V4C20 2.895 19.105 2 18 2Z" stroke="currentColor" stroke-width="1.4"/><path d="M9 7H15M9 11H15M9 15H12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <span>Kontakt przez formularz lub Facebook</span>
+            </div>
+          </div>
+
+          <div class="fb-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.514c-1.491 0-1.956.931-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073Z"/></svg>
+            <span>Dominika Kusior – Facebook</span>
+          </div>
+        </div>
+
+        <!-- Formularz usunięty -->
+<div class="form-removed-msg text-center" style="padding: 2rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; margin-top: 2rem;"><h3 style="margin-bottom: 1rem;">Skontaktuj się z nami bezpośrednio</h3><p>Preferujemy kontakt telefoniczny lub przez nasze media społecznościowe. Zapraszamy!</p></div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span>Dominika</span> <em>Kusior</em>
+          </div>
+          <p class="footer-tagline">Mobilne Fryzjerstwo Premium<br />Cały Śląsk</p>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Usługi</h4>
+          <a href="#uslugi">Stylizacja Ślubna</a>
+          <a href="#uslugi">Koloryzacja</a>
+          <a href="#uslugi">Cięcie Damskie</a>
+          <a href="#uslugi">Zabiegi Regeneracyjne</a>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Informacje</h4>
+          <a href="#dlaczego">Dlaczego mobilnie?</a>
+          <a href="#opinie">Opinie</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Obszar działania</h4>
+          <p>Katowice · Gliwice · Sosnowiec<br />Zabrze · Bytom · Ruda Śląska<br />i okolice — <em>cały Śląsk</em></p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Dominika Kusior – Mobilne Fryzjerstwo. Wszelkie prawa zastrzeżone.</p>
+        <p class="footer-credit">Projekt &amp; realizacja: <strong>Snap Code Studio</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════
+       FLOATING CTA
+  ═══════════════════════════════════ -->
+  <a href="#kontakt" class="floating-cta" id="floatingCta" aria-label="Umów wizytę">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M20 21C20 19.6044 20 18.9067 19.8278 18.3389C19.44 17.0605 18.4395 16.06 17.1611 15.6722C16.5933 15.5 15.8956 15.5 14.5 15.5H9.5C8.10444 15.5 7.40665 15.5 6.83886 15.6722C5.56045 16.06 4.56004 17.0605 4.17224 18.3389C4 18.9067 4 19.6044 4 21M16.5 7.5C16.5 9.98528 14.4853 12 12 12C9.51472 12 7.5 9.98528 7.5 7.5C7.5 5.01472 9.51472 3 12 3C14.4853 3 16.5 5.01472 16.5 7.5Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <span>Umów Wizytę</span>
+  </a>
+
+  <script src="./app.js"></script>
+</body>
+</html>

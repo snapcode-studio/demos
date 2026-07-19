@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bistro Cichy Kącik | Ręcznie Lepione Pierogi – Sosnowiec</title>
+  <meta name="description" content="Bistro Cichy Kącik w Sosnowcu – ręcznie lepione pierogi, tradycyjne zupy i dania główne. Smak jak u mamy. Zamów przez Pyszne.pl, Wolt lub Uber Eats." />
+  <meta name="keywords" content="pierogi sosnowiec, bistro sosnowiec, obiady domowe sosnowiec, pierogi ruskie, cichy kącik" />
+  <meta property="og:title" content="Bistro Cichy Kącik | Ręcznie Lepione Pierogi" />
+  <meta property="og:description" content="Tradycyjne obiady domowe i ręcznie robione pierogi. Smak jak u mamy w Sosnowcu." />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-content">
+      <a href="#hero" class="logo" aria-label="Bistro Cichy Kącik - strona główna">
+        <span class="logo-icon">🥟</span>
+        <span class="logo-text">Bistro <em>Cichy Kącik</em></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#menu" class="nav-link">Menu</a></li>
+        <li><a href="#dzisiaj" class="nav-link">Dzisiaj</a></li>
+        <li><a href="#o-nas" class="nav-link">Nasza Kuchnia</a></li>
+        <li><a href="#opinie" class="nav-link">Opinie</a></li>
+        <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+        <li><a href="#zamow" class="btn-nav">Zamów z Dowozem</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Otwórz menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="hero">
+    <div class="hero-bg">
+      <img
+        src="https://images.unsplash.com/photo-1595295333158-4742f28fbd85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=85"
+        alt="Ręcznie lepione pierogi"
+        class="hero-img"
+        loading="eager"
+      />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-badge fade-in-up delay-1">✦ Sosnowiec, od serca</div>
+      <h1 class="fade-in-up delay-2">
+        Obiady domowe<br />
+        <em>jak u mamy</em>
+      </h1>
+      <p class="hero-sub fade-in-up delay-3">
+        Ręcznie lepione pierogi, aromatyczne zupy i dania główne.<br />
+        Codziennie świeże — bez kompromisów, z sercem.
+      </p>
+      <div class="hero-buttons fade-in-up delay-4">
+        <a href="#menu" class="btn btn-primary">
+          <span>Zobacz Menu</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#zamow" class="btn btn-outline-hero">Zamów Teraz</a>
+      </div>
+      <div class="hero-stats fade-in-up delay-5">
+        <div class="stat">
+          <strong>10+</strong>
+          <span>Lat tradycji</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <strong>100%</strong>
+          <span>Ręcznie lepione</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <strong>Bez</strong>
+          <span>Sztucznych dodatków</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint fade-in-up delay-5">
+      <span>Przewiń w dół</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </header>
+
+  <!-- ===== DZISIAJ W MENU ===== -->
+  <section id="dzisiaj" class="dzisiaj-section">
+    <div class="container">
+      <div class="dzisiaj-card reveal">
+        <div class="dzisiaj-tag">✦ Dzisiaj w menu — polecamy</div>
+        <div class="dzisiaj-content">
+          <div class="dzisiaj-main">
+            <h2>Pierogi Ruskie<br /><em>z okrasą ze skwarkami</em></h2>
+            <p>
+              Nasze flagowe danie — ciasto własnej roboty, nadzienie z twarogu, ziemniaków i cebulki,
+              podane ze złocistą okrasą ze skwareczek. Przepis bez zmian od 10 lat.
+            </p>
+            <div class="dzisiaj-price">
+              <span class="price-amount">28,99 zł</span>
+              <span class="price-note">porcja 10 szt.</span>
+            </div>
+            <a href="#" onclick="copyContact(event, '+48506077085')" class="btn btn-primary" id="dzisiaj-order-btn">Zamów telefonicznie</a>
+          </div>
+          <div class="dzisiaj-image">
+            <img
+              src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Pierogi Ruskie ze skwarkami"
+              loading="lazy"
+            />
+            <div class="dzisiaj-img-badge">🏆 Bestseller</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MENU ===== -->
+  <section id="menu" class="menu-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Co jemy?</span>
+        <h2 class="section-title">Nasze <em>Menu</em></h2>
+        <p class="section-sub">Wszystko przygotowywane każdego ranka ze świeżych składników</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="menu-tabs reveal">
+        <button class="tab-btn active" data-tab="pierogi" id="tab-pierogi">🥟 Pierogi</button>
+        <button class="tab-btn" data-tab="zupy" id="tab-zupy">🍲 Zupy</button>
+        <button class="tab-btn" data-tab="dania" id="tab-dania">🍽 Dania Główne</button>
+        <button class="tab-btn" data-tab="desery" id="tab-desery">🍮 Desery</button>
+      </div>
+
+      <!-- PIEROGI -->
+      <div class="menu-panel active" id="panel-pierogi">
+        <div class="menu-grid">
+          <div class="menu-card reveal">
+            <div class="menu-card-icon">🥟</div>
+            <div class="menu-card-body">
+              <div class="menu-item-row">
+                <div>
+                  <h3 class="menu-item-name">Pierogi Ruskie</h3>
+                  <p class="menu-item-desc">Twaróg, ziemniaki, cebulka. Podawane z okrasą lub śmietaną.</p>
+                </div>
+                <span class="menu-item-price">28,99 zł</span>
+              </div>
+              <span class="menu-item-badge bestseller">Bestseller</span>
+            </div>
+          </div>
+          <div class="menu-card reveal delay-1">
+            <div class="menu-card-icon">🥩</div>
+            <div class="menu-card-body">
+              <div class="menu-item-row">
+                <div>
+                  <h3 class="menu-item-name">Pierogi z Mięsem</h3>
+                  <p class="menu-item-desc">Mielone mięso wieprzowe z cebulą i pieprzem. Sycące i aromatyczne.</p>
+                </div>
+                <span class="menu-item-price">od 28,99 zł</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card reveal delay-2">
+            <div class="menu-card-icon">🌿</div>
+            <div class="menu-card-body">
+              <div class="menu-item-row">
+                <div>
+                  <h3 class="menu-item-name">Pierogi ze Szpinakiem</h3>
+                  <p class="menu-item-desc">Szpinak z ricottą i czosnkiem. Lżejsza, aromatyczna alternatywa.</p>
+                </div>
+                <span class="menu-item-price">od 28,99 zł</span>
+              </div>
+              <span class="menu-item-badge new">Nowość</span>
+            </div>
+          </div>
+          <div class="menu-card reveal delay-3">
+            <div class="menu-card-icon">🍄</div>
+            <div class="menu-card-body">
+              <div class="menu-item-row">
+                <div>
+                  <h3 class="menu-item-name">Pierogi z Kapustą i Grzybami</h3>
+                  <p class="menu-item-desc">Tradycyjny smak wigilia – kapusta kiszona z leśnymi grzybami.</p>
+                </div>
+                <span class="menu-item-price">od 28,99 zł</span>
+              </div>
+              <span class="menu-item-badge seasonal">Sezonowe</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ZUPY -->
+      <div class="menu-panel" id="panel-zupy">
+        <div class="menu-grid">
+          <div class="menu-card reveal">
+            <div class="menu-card-icon">🫙</div>
+            <div class="menu-card-body">
+              <div class="menu-item-row">
+                <div>
+                  <h3 class="menu-item-name">Barszcz Czerwony z Uszkami</h3>
+                  <p class="menu-item-desc">Intensywny barszcz z uszkami z grzybami i kapustą.</p>
+                </div>
+                <span class="menu-item-price">16,99 zł</span>
+              </div>
+              <span class="menu-item-badge bestseller">Bestseller</span>
+            </div>
+          </div>
+          <div class="menu-card reveal delay-1">
+            <div class="menu-card-icon">🐔</div>
+            <div class="menu-card-body">
+              <div class="menu-item-row">
+                <div>
+                  <h3 class="menu-item-name">Rosół z Makaronem</h3>
+                  <p class="menu-item-desc">Domowy rosół gotowany na kościach przez kilka godzin. Złoty, klarowny, aromatyczny.</p>
+                </div>
+                <span class="menu-item-price">14,00 zł</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card reveal delay-2">
+            <div class="menu-card-icon">🥣</div>
+            <div class="menu-card-body">
+              <div class="menu-item-row">
+                <div>
+                  <h3 class="menu-item-name">Żurek Śląski</h3>
+                  <p class="menu-item-desc">Na zakwasie, z kiełbasą i jajkiem. Klasyk śląskich stołów.</p>
+                </div>
+                <span class="menu-item-price">15,50 zł</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DANIA GŁÓWNE -->
+      <div class="menu-panel" id="panel-dania">
+        <div class="menu-grid">
+          <div class="menu-card reveal">
+            <div class="menu-card-icon">🥩</div>
+            <div class="menu-card-body">
+              <div class="menu-item-row">
+                <div>
+                  <h3 class="menu-item-name">Rolada Śląska z Kluskami</h3>
+                  <p class="menu-item-desc">Roladka wołowa nadziewana słoniną i ogórkiem, podana z kluskami śląskimi i modrą kapustą.</p>
+                </div>
+                <span class="menu-item-price">Zapytaj</span>
+              </div>
+              <span class="menu-item-badge bestseller">Specjalność</span>
+            </div>
+          </div>
+          <div class="menu-card reveal delay-1">
+            <div class="menu-card-icon">🍅</div>
+            <div class="menu-card-body">
+              <div class="menu-item-row">
+                <div>
+                  <h3 class="menu-item-name">Gołąbki w Sosie Pomidorowym</h3>
+                  <p class="menu-item-desc">Kapusta faszerowana mięsem z ryżem, duszona w aromatycznym sosie pomidorowym.</p>
+                </div>
+                <span class="menu-item-price">Zapytaj</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card reveal delay-2">
+            <div class="menu-card-icon">🥔</div>
+            <div class="menu-card-body">
+              <div class="menu-item-row">
+                <div>
+                  <h3 class="menu-item-name">Kotlet Schabowy z Ziemniakami</h3>
+                  <p class="menu-item-desc">Klasyczny kotlet panierowany, podawany z ziemniakami z wody i surówką z kapusty.</p>
+                </div>
+                <span class="menu-item-price">Zapytaj</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESERY -->
+      <div class="menu-panel" id="panel-desery">
+        <div class="menu-grid">
+          <div class="menu-card reveal">
+            <div class="menu-card-icon">🍮</div>
+            <div class="menu-card-body">
+              <div class="menu-item-row">
+                <div>
+                  <h3 class="menu-item-name">Naleśniki z Serem</h3>
+                  <p class="menu-item-desc">Delikatne naleśniki z twarogiem, wanilią i rodzynkami. Podawane ze śmietaną lub dżemem.</p>
+                </div>
+                <span class="menu-item-price">od 12,99 zł</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card reveal delay-1">
+            <div class="menu-card-icon">🍫</div>
+            <div class="menu-card-body">
+              <div class="menu-item-row">
+                <div>
+                  <h3 class="menu-item-name">Naleśniki z Czekoladą</h3>
+                  <p class="menu-item-desc">Cienkie naleśniki z nutellą i bananami lub owocami sezonowymi.</p>
+                </div>
+                <span class="menu-item-price">od 13,99 zł</span>
+              </div>
+              <span class="menu-item-badge new">Nowość</span>
+            </div>
+          </div>
+          <div class="menu-card reveal delay-2">
+            <div class="menu-card-icon">🍎</div>
+            <div class="menu-card-body">
+              <div class="menu-item-row">
+                <div>
+                  <h3 class="menu-item-name">Sernik Domowy</h3>
+                  <p class="menu-item-desc">Tradycyjny sernik pieczony, wilgotny i kremowy. Sezonowo z owocami lub konfiturą.</p>
+                </div>
+                <span class="menu-item-price">9,99 zł</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-footer reveal">
+        <p>🌱 Produkty świeże, lokalne. Menu zmienia się sezonowo.<br />Zapytaj o alergeny — chętnie odpowiemy!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NASZA KUCHNIA (O NAS) ===== -->
+  <section id="o-nas" class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-col reveal">
+          <div class="about-img-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1595295333158-4742f28fbd85?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80"
+              alt="Ręczne lepienie pierogów w Bistro Cichy Kącik"
+              loading="lazy"
+            />
+            <div class="about-img-badge">
+              <span>🥟</span>
+              <strong>Każdy pieróg lepiony ręcznie</strong>
+            </div>
+          </div>
+        </div>
+        <div class="about-text-col reveal delay-2">
+          <span class="section-tag">Nasza historia</span>
+          <h2 class="section-title text-left">Kuchnia z <em>Duszą</em></h2>
+          <p class="about-lead">
+            Bistro Cichy Kącik to więcej niż lokal — to miejsce, gdzie czas płynie wolniej,
+            a zapach domowego jedzenia przypomina najlepsze wspomnienia dzieciństwa.
+          </p>
+          <p>
+            Codziennie rano nasze kucharki przygotowują ciasto na pierogi. Żadnych mrożonek,
+            żadnych półproduktów. Tylko świeże składniki, tradycyjne receptury i mnóstwo serca
+            wkładanego w każdą porcję.
+          </p>
+          <p>
+            Gotujemy bez sztucznych dodatków, z troską o każdy detal.
+            Bo wierzymy, że prawdziwy smak nie potrzebuje ulepszaczy.
+          </p>
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="feature-icon">🌿</div>
+              <div>
+                <strong>Lokalne składniki</strong>
+                <span>Współpracujemy z lokalnymi dostawcami</span>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="feature-icon">👩‍🍳</div>
+              <div>
+                <strong>Domowe receptury</strong>
+                <span>Przepisy przekazywane z pokolenia na pokolenie</span>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="feature-icon">❤️</div>
+              <div>
+                <strong>Bez konserwantów</strong>
+                <span>Tylko naturalne składniki, codziennie świeże</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section id="opinie" class="testimonials-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Co mówią goście?</span>
+        <h2 class="section-title">Opinie <em>Prawdziwych Smakoszy</em></h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal delay-1">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>
+            "Najlepsze pierogi ruskie jakie jadłam od lat. Ciasto idealne — cienkie,
+            ale sprężyste. Farsz domowy, śmietanka świeżutka. Czułam się jak u babci.
+            Wróciłam już po raz czwarty i na pewno nie ostatni!"
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">M</div>
+            <div>
+              <strong>Marta K.</strong>
+              <span>Sosnowiec • Google Maps</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal delay-2">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>
+            "Rosół jak ze snu — klarowny, tłusty, z prawdziwym smakiem. Do tego gołąbki
+            w sosie pomidorowym — po prostu niebo. Obsługa miła, ceny uczciwe,
+            porcje że nie można dokończyć. Polecam absolutnie każdemu!"
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">P</div>
+            <div>
+              <strong>Piotr W.</strong>
+              <span>Będzin • Pyszne.pl</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal delay-3">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>
+            "Zamawiałam na obiad dla całego biura i wszyscy byli zachwyceni!
+            Pierogi ze szpinakiem i ricottą to odkrycie roku — nowoczesne, ale z domowym
+            sznytem. Barszcz z uszkami idealny. To jest właśnie prawdziwe jedzenie!"
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">A</div>
+            <div>
+              <strong>Agnieszka T.</strong>
+              <span>Katowice • Wolt</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ZAMÓW Z DOWOZEM ===== -->
+  <section id="zamow" class="delivery-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Zamów online</span>
+        <h2 class="section-title">Dowieziemy <em>Pod Twoje Drzwi</em></h2>
+        <p class="section-sub">Wybierz swoją ulubioną platformę i zamów domowe jedzenie bez wychodzenia z domu</p>
+      </div>
+      <div class="delivery-cards reveal">
+        <a href="https://www.pyszne.pl/menu/bistro-cichy-kacik" target="_blank" rel="noopener noreferrer" class="delivery-card" id="pyszne-btn" aria-label="Zamów na Pyszne.pl">
+          <div class="delivery-card-logo pyszne">
+            <span>🍕</span>
+            <strong>Pyszne.pl</strong>
+          </div>
+          <p>Zamów teraz</p>
+          <div class="delivery-arrow">→</div>
+        </a>
+        <a href="https://wolt.com/pl/pol/sosnowiec/restaurant/cichy-kcik-kocielna" target="_blank" rel="noopener noreferrer" class="delivery-card" id="wolt-btn" aria-label="Zamów na Wolt">
+          <div class="delivery-card-logo wolt">
+            <span>🔵</span>
+            <strong>Wolt</strong>
+          </div>
+          <p>Zamów teraz</p>
+          <div class="delivery-arrow">→</div>
+        </a>
+        <a href="https://www.ubereats.com/pl/store/cichy-kacik-bistro/lZYNA18LTcqQ6l75LuVaIg" target="_blank" rel="noopener noreferrer" class="delivery-card" id="ubereats-btn" aria-label="Zamów na Uber Eats">
+          <div class="delivery-card-logo uber">
+            <span>🟢</span>
+            <strong>Uber Eats</strong>
+          </div>
+          <p>Zamów teraz</p>
+          <div class="delivery-arrow">→</div>
+        </a>
+        <a href="#" onclick="copyContact(event, '+48506077085')" class="delivery-card delivery-card-phone" id="phone-order-btn" aria-label="Zamów telefonicznie">
+          <div class="delivery-card-logo phone">
+            <span>📞</span>
+            <strong>Telefonicznie</strong>
+          </div>
+          <p>+48 506 077 085</p>
+          <div class="delivery-arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KONTAKT / FOOTER ===== -->
+  <footer id="kontakt" class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand reveal">
+            <div class="footer-logo">
+              <span>🥟</span>
+              <span>Bistro <em>Cichy Kącik</em></span>
+            </div>
+            <p class="footer-tagline">
+              Domowe jedzenie z pasją.<br />
+              Ręcznie, świeżo, ze smakiem.
+            </p>
+            <div class="footer-socials">
+              <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="social-link">f</a>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="social-link">ig</a>
+            </div>
+          </div>
+
+          <div class="footer-col reveal delay-1">
+            <h3>Adres</h3>
+            <address>
+              <p>📍 ul. Kościelna 1/3</p>
+              <p>41-200 Sosnowiec</p>
+            </address>
+            <a href="https://maps.google.com/?q=ul.+Kościelna+1/3+Sosnowiec" target="_blank" rel="noopener" class="footer-link" id="maps-link">
+              Otwórz w Google Maps →
+            </a>
+          </div>
+
+          <div class="footer-col reveal delay-2">
+            <h3>Godziny Otwarcia</h3>
+            <ul class="hours-list">
+              <li>
+                <span>Poniedziałek – Piątek</span>
+                <strong>10:00 – 17:00</strong>
+              </li>
+              <li>
+                <span>Sobota</span>
+                <strong>10:00 – 14:00</strong>
+              </li>
+              <li class="closed">
+                <span>Niedziela</span>
+                <strong>Zamknięte</strong>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col reveal delay-3">
+            <h3>Kontakt</h3>
+            <a href="#" onclick="copyContact(event, '+48506077085')" class="footer-contact-link" id="footer-phone">
+              📞 +48 506 077 085
+            </a>
+            <a href="#" onclick="copyContact(event, 'bistrocichy@gmail.com')" class="footer-contact-link" id="footer-email">
+              ✉️ bistrocichy@gmail.com
+            </a>
+            <div class="footer-delivery-badges">
+              <span class="delivery-badge">Pyszne.pl</span>
+              <span class="delivery-badge">Wolt</span>
+              <span class="delivery-badge">Uber Eats</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Bistro Cichy Kącik. Wszystkie prawa zastrzeżone.</p>
+        <p class="footer-credit">Projekt i realizacja: <a href="#" class="footer-credit-link">Snap Code Studio</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING CALL BUTTON ===== -->
+  <a href="#" onclick="copyContact(event, '+48506077085')" class="floating-call" id="floatingCall" aria-label="Zadzwoń do nas">
+    <div class="floating-call-inner">
+      <span class="floating-icon">📞</span>
+      <span class="floating-label">Zadzwoń</span>
+    </div>
+    <div class="floating-pulse"></div>
+  </a>
+
+  <script src="./app.js"></script>
+</body>
+</html>

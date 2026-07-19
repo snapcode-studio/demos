@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PACE — Move Without Limits</title>
+  <meta name="description" content="PACE — premium sportswear. Buty, odzież i akcesoria dla tych, którzy nie znają ograniczeń." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta property="og:title"       content="PACE — Move Without Limits" />
+  <meta property="og:description" content="Premium sportswear. Buty biegowe, training i lifestyle." />
+  <meta property="og:image"       content="images/hero-v2.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div id="scroll-bar"></div>
+
+<!-- NAV -->
+<nav class="nav nav--dark" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo" aria-label="PACE – strona główna">PACE</a>
+    <ul class="nav__links" role="list">
+      <li><a href="shoes.html"    class="nav__link">Buty</a></li>
+      <li><a href="clothing.html" class="nav__link">Odzież</a></li>
+      <li><a href="about.html"    class="nav__link">O marce</a></li>
+    </ul>
+    <div class="nav__actions">
+      <button class="nav__btn" aria-label="Szukaj">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg>
+      </button>
+      <button class="nav__btn" aria-label="Koszyk (2 produkty)" style="position:relative">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4ZM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="nav__badge">2</span>
+      </button>
+      <button class="nav__ham" id="ham" aria-label="Otwórz menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- DRAWER -->
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu nawigacyjne">
+  <button id="drawer-close" aria-label="Zamknij menu" style="position:absolute;top:20px;right:var(--pad);color:#fff;font-size:28px;line-height:1;">✕</button>
+  <nav>
+    <a href="shoes.html"    class="drawer__link">Buty</a>
+    <a href="clothing.html" class="drawer__link">Odzież</a>
+    <a href="about.html"    class="drawer__link">O marce</a>
+  </nav>
+  <div class="drawer__sub">
+    <a href="shoes.html">Biegowe</a>
+    <a href="shoes.html">Training</a>
+    <a href="shoes.html">Basketball</a>
+    <a href="shoes.html">Lifestyle</a>
+    <a href="clothing.html">Bluzy</a>
+    <a href="clothing.html">Kurtki</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" aria-label="Hero — Nowa kolekcja 2026">
+  <div class="hero__media">
+    <img src="images/hero-v2.jpg" alt="Atleta PACE biegnący przez podświetlony tunel" fetchpriority="high" />
+  </div>
+  <div class="hero__overlay" aria-hidden="true"></div>
+  <div class="hero__content wrap">
+    <p class="hero__kicker">Kolekcja 2026</p>
+    <h1 class="hero__headline">Move<br>Without<br>Limits.</h1>
+    <p class="hero__sub">Technologia, która pcha Cię dalej.<br>Design, który sprawia, że chcesz iść.</p>
+    <div class="hero__actions">
+      <a href="shoes.html"    class="btn btn--solid">Odkryj buty</a>
+      <a href="clothing.html" class="btn btn--ghost-white">Odzież</a>
+    </div>
+  </div>
+  <div class="hero__scroll" aria-hidden="true">
+    <span class="hero__scroll-text">Scroll</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span class="ticker__item">Buty Biegowe</span>
+    <span class="ticker__item">Training</span>
+    <span class="ticker__item">Basketball</span>
+    <span class="ticker__item">Lifestyle</span>
+    <span class="ticker__item">Nowa kolekcja</span>
+    <span class="ticker__item">PACE 2026</span>
+    <span class="ticker__item">Move Fast</span>
+    <span class="ticker__item">Street Series</span>
+    <!-- duplicate for seamless loop -->
+    <span class="ticker__item">Buty Biegowe</span>
+    <span class="ticker__item">Training</span>
+    <span class="ticker__item">Basketball</span>
+    <span class="ticker__item">Lifestyle</span>
+    <span class="ticker__item">Nowa kolekcja</span>
+    <span class="ticker__item">PACE 2026</span>
+    <span class="ticker__item">Move Fast</span>
+    <span class="ticker__item">Street Series</span>
+  </div>
+</div>
+
+<!-- HERO CARDS (editorial, Nike-style) -->
+<section class="section" aria-labelledby="explore-title">
+  <div class="wrap">
+    <div class="s-header-row reveal">
+      <div>
+        <p class="s-label">Odkryj</p>
+        <h2 class="s-title" id="explore-title">Kolekcje</h2>
+      </div>
+      <a href="shoes.html" class="btn btn--ghost reveal reveal-d1">Zobacz wszystkie</a>
+    </div>
+
+    <div class="hgrid">
+      <a href="shoes.html" class="hcard hcard--tall reveal" aria-label="Kolekcja butów biegowych">
+        <img class="hcard__img" src="images/athlete.jpg" alt="Biegacz PACE w czarnej odzieży sportowej" loading="lazy" />
+        <div class="hcard__gradient" aria-hidden="true"></div>
+        <div class="hcard__content">
+          <p class="hcard__kicker">Nowość</p>
+          <h3 class="hcard__title">Buty<br>Biegowe</h3>
+          <span class="hcard__cta">Kup teraz <span aria-hidden="true">→</span></span>
+        </div>
+      </a>
+
+      <div style="display:flex;flex-direction:column;gap:clamp(8px,1.5vw,16px);">
+        <a href="shoes.html" class="hcard reveal reveal-d1" aria-label="Basketball">
+          <img class="hcard__img" src="images/shoes-collection.jpg" alt="Kolekcja butów PACE" loading="lazy" />
+          <div class="hcard__gradient" aria-hidden="true"></div>
+          <div class="hcard__content">
+            <p class="hcard__kicker">Court Ready</p>
+            <h3 class="hcard__title">Basketball</h3>
+            <span class="hcard__cta">Przeglądaj <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+        <a href="clothing.html" class="hcard reveal reveal-d2" aria-label="Odzież sportowa">
+          <img class="hcard__img" src="images/hoodie.jpg" alt="Odzież sportowa PACE" loading="lazy" style="object-position:top;" />
+          <div class="hcard__gradient" aria-hidden="true"></div>
+          <div class="hcard__content">
+            <p class="hcard__kicker">Street Series</p>
+            <h3 class="hcard__title">Odzież</h3>
+            <span class="hcard__cta">Odkryj <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="section section--grey" aria-labelledby="featured-title">
+  <div class="wrap">
+    <div class="s-header-row reveal">
+      <div>
+        <p class="s-label">Bestsellery</p>
+        <h2 class="s-title" id="featured-title">Najlepsze<br>modele.</h2>
+      </div>
+      <a href="shoes.html" class="btn btn--ghost reveal reveal-d1">Wszystkie buty</a>
+    </div>
+
+    <div class="pgrid pgrid--4">
+
+      <!-- Shoe 1 -->
+      <article class="pcard reveal">
+        <div class="pcard__img-box">
+          <span class="pcard__badge pcard__badge--lime">Bestseller</span>
+          <button class="pcard__wish" aria-label="Dodaj do ulubionych">
+            <svg width="14" height="14" fill="none" stroke="#0a0a0a" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+          <img class="pcard__img" src="images/shoe-p1.jpg" alt="PACE Velocity X1 — buty biegowe czarno-limonkowe" loading="lazy" />
+          <div class="pcard__overlay">Szybki podgląd</div>
+        </div>
+        <p class="pcard__sub">Biegowe</p>
+        <h3 class="pcard__name">Velocity X1</h3>
+        <p class="pcard__price">549 zł</p>
+        <div class="pcard__dots">
+          <span class="dot dot--active" style="background:#0a0a0a;" title="Czarny"></span>
+          <span class="dot" style="background:#c8f500;" title="Limonkowy"></span>
+          <span class="dot dot--ring" style="background:#fff;" title="Biały"></span>
+        </div>
+      </article>
+
+      <!-- Shoe 2 -->
+      <article class="pcard reveal reveal-d1">
+        <div class="pcard__img-box">
+          <span class="pcard__badge pcard__badge--new">Nowość</span>
+          <button class="pcard__wish" aria-label="Dodaj do ulubionych">
+            <svg width="14" height="14" fill="none" stroke="#0a0a0a" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+          <img class="pcard__img" src="images/shoe-p2.jpg" alt="PACE AeroFit Pro — białe buty treningowe" loading="lazy" />
+          <div class="pcard__overlay">Szybki podgląd</div>
+        </div>
+        <p class="pcard__sub">Training</p>
+        <h3 class="pcard__name">AeroFit Pro</h3>
+        <div class="pcard__price">
+          <span class="pcard__price--sale">429 zł</span>
+          <span class="pcard__price--orig">589 zł</span>
+        </div>
+        <div class="pcard__dots">
+          <span class="dot dot--active dot--ring" style="background:#fff;" title="Biały"></span>
+          <span class="dot" style="background:#e8001a;" title="Czerwony"></span>
+          <span class="dot" style="background:#0a0a0a;" title="Czarny"></span>
+        </div>
+      </article>
+
+      <!-- Shoe 3 -->
+      <article class="pcard reveal reveal-d2">
+        <div class="pcard__img-box">
+          <span class="pcard__badge pcard__badge--sale">-20%</span>
+          <button class="pcard__wish" aria-label="Dodaj do ulubionych">
+            <svg width="14" height="14" fill="none" stroke="#0a0a0a" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+          <img class="pcard__img" src="images/shoe-p3.jpg" alt="PACE Court Elite — buty do koszykówki czarno-złote" loading="lazy" />
+          <div class="pcard__overlay">Szybki podgląd</div>
+        </div>
+        <p class="pcard__sub">Basketball</p>
+        <h3 class="pcard__name">Court Elite</h3>
+        <div class="pcard__price">
+          <span class="pcard__price--sale">649 zł</span>
+          <span class="pcard__price--orig">799 zł</span>
+        </div>
+        <div class="pcard__dots">
+          <span class="dot dot--active" style="background:#0a0a0a;" title="Czarny/Złoty"></span>
+          <span class="dot" style="background:#b8860b;" title="Złoty"></span>
+        </div>
+      </article>
+
+      <!-- Shoe 4 -->
+      <article class="pcard reveal reveal-d3">
+        <div class="pcard__img-box">
+          <button class="pcard__wish" aria-label="Dodaj do ulubionych">
+            <svg width="14" height="14" fill="none" stroke="#0a0a0a" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+          <img class="pcard__img" src="images/shoe-p4.jpg" alt="PACE Stealth LS — sneakery lifestyle szaro-limonkowe" loading="lazy" />
+          <div class="pcard__overlay">Szybki podgląd</div>
+        </div>
+        <p class="pcard__sub">Lifestyle</p>
+        <h3 class="pcard__name">Stealth LS</h3>
+        <p class="pcard__price">389 zł</p>
+        <div class="pcard__dots">
+          <span class="dot dot--active" style="background:#888;" title="Szary"></span>
+          <span class="dot" style="background:#c8f500;" title="Limonkowy"></span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<div class="statement" aria-label="Brand statement">
+  <div class="statement__ghost" aria-hidden="true">PACE</div>
+  <div class="wrap" style="position:relative;z-index:2;text-align:center;">
+    <p class="statement__kicker reveal">Nasza filozofia</p>
+    <h2 class="statement__title reveal reveal-d1">
+      Każdy Krok<br>
+      <em>To Wybór.</em>
+    </h2>
+    <p class="statement__sub reveal reveal-d2">
+      Projektujemy dla tych, którzy nie pytają czy wytrzymają — tylko jak szybko dotrą na szczyt.
+    </p>
+    <a href="about.html" class="btn btn--lime reveal reveal-d3">Poznaj markę</a>
+  </div>
+</div>
+
+<!-- SPLIT: Technology -->
+<div class="split">
+  <div class="split__media">
+    <img src="images/athlete.jpg" alt="Sportowiec PACE w biegu nocnym — technologia PACE-X" loading="lazy" />
+  </div>
+  <div class="split__body split__body--black reveal">
+    <p class="split__kicker">Innowacja</p>
+    <h2 class="split__title">Technologia<br>PACE-X</h2>
+    <p class="split__body-text">Nasza autorska pianka podsuwowa absorbuje do 80% energii uderzenia i oddaje 94% z powrotem przy odpychaniu. Lżejsza niż powietrze.</p>
+    <a href="shoes.html" class="btn btn--lime">Odkryj buty PACE-X</a>
+  </div>
+</div>
+
+<!-- SPLIT: Street Series -->
+<div class="split">
+  <div class="split__body split__body--lime reveal">
+    <p class="split__kicker">Kolekcja</p>
+    <h2 class="split__title">Street<br>Series</h2>
+    <p class="split__body-text">Styl ulicy spotyka się z wydajnością boiska. Zaprojektowane, by wyglądać tak dobrze po treningu, jak i na nim.</p>
+    <a href="clothing.html" class="btn btn--black">Kup teraz</a>
+  </div>
+  <div class="split__media">
+    <img src="images/hero-shoe.jpg" alt="PACE Street Series — flagowe buty kolekcji 2026" loading="lazy" />
+  </div>
+</div>
+
+<!-- STATS -->
+<section aria-label="Statystyki marki">
+  <div class="stats">
+    <div class="stat reveal">
+      <div class="stat__num"><span id="stat-1">0</span><sup>+</sup></div>
+      <p class="stat__label">Modeli butów</p>
+    </div>
+    <div class="stat reveal reveal-d1">
+      <div class="stat__num"><span id="stat-2">0</span><sup>k</sup></div>
+      <p class="stat__label">Klientów globalnie</p>
+    </div>
+    <div class="stat reveal reveal-d2">
+      <div class="stat__num"><span id="stat-3">0</span></div>
+      <p class="stat__label">Krajów dostawy</p>
+    </div>
+    <div class="stat reveal reveal-d3">
+      <div class="stat__num"><span id="stat-4">0</span></div>
+      <p class="stat__label">Nagród designu</p>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="nl">
+  <div class="wrap">
+    <div class="nl__inner">
+      <h2 class="nl__title reveal">Bądź<br>Pierwszy.</h2>
+      <div class="nl__right reveal reveal-d1">
+        <p class="nl__hint">Nowe dropy, oferty, nowości — prosto na Twój e-mail.</p>
+        <form class="nl__form" onsubmit="return false;" aria-label="Zapis do newslettera">
+          <input class="nl__input" type="email" placeholder="twoj@email.com" aria-label="Adres e-mail" />
+          <button class="nl__submit" type="submit">Dołącz</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer" aria-label="Stopka">
+  <div class="footer__top">
+    <div>
+      <p class="footer__logo">PACE</p>
+      <p class="footer__desc">Tworzymy sportswear dla tych, którzy wyznaczają swój własny rytm. Bez kompromisów. Bez ograniczeń.</p>
+      <div class="footer__socials">
+        <a href="#" class="footer__soc" aria-label="Instagram">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="#" class="footer__soc" aria-label="TikTok">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.79 1.54V6.78a4.85 4.85 0 0 1-1.02-.09z"/></svg>
+        </a>
+        <a href="#" class="footer__soc" aria-label="YouTube">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088C19.535 3.617 12 3.617 12 3.617s-7.516 0-9.407.5A3.007 3.007 0 0 0 .505 6.205 31.247 31.247 0 0 0 0 12.01a31.247 31.247 0 0 0 .505 5.783 3.007 3.007 0 0 0 2.088 2.088C4.484 20.393 12 20.393 12 20.393s7.507 0 9.407-.512a3.007 3.007 0 0 0 2.088-2.088A31.247 31.247 0 0 0 24 12.01a31.247 31.247 0 0 0-.505-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <p class="footer__col-h">Produkty</p>
+      <ul class="footer__col-links">
+        <li><a href="shoes.html" class="footer__col-link">Buty Biegowe</a></li>
+        <li><a href="shoes.html" class="footer__col-link">Basketball</a></li>
+        <li><a href="shoes.html" class="footer__col-link">Training</a></li>
+        <li><a href="clothing.html" class="footer__col-link">Odzież</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer__col-h">Marka</p>
+      <ul class="footer__col-links">
+        <li><a href="about.html" class="footer__col-link">O Nas</a></li>
+        <li><a href="#" class="footer__col-link">Technologia PACE-X</a></li>
+        <li><a href="#" class="footer__col-link">Odpowiedzialność</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer__col-h">Pomoc</p>
+      <ul class="footer__col-links">
+        <li><a href="#" class="footer__col-link">Rozmiarówka</a></li>
+        <li><a href="#" class="footer__col-link">Zwroty & Wymiana</a></li>
+        <li><a href="#" class="footer__col-link">Dostawa</a></li>
+        <li><a href="#" class="footer__col-link">Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p class="footer__copy">© 2026 PACE. Wszelkie prawa zastrzeżone.</p>
+    <div class="footer__legal">
+      <a href="#">Prywatność</a>
+      <a href="#">Regulamin</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

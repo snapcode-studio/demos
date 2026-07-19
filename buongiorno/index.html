@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buongiorno Sosnowiec | Pizzeria Sosnowiec – Prawdziwa Włoska Pizza</title>
+  <meta name="description" content="Bistro Buongiorno Sosnowiec – najlepsza pizza na cienkim cieście we włoskim stylu w Sosnowcu. Odwiedź nas przy ul. Kościelna 52. Tel: +48 531 922 268." />
+  <meta property="og:title" content="Buongiorno Sosnowiec | Pizzeria Sosnowiec" />
+  <meta property="og:description" content="Tradycyjna kuchnia polska jak u mamy – ogromne porcje, ciepła atmosfera, Sosnowiec." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo" aria-label="Buongiorno Sosnowiec – strona główna">
+        <span class="logo-icon">🍕</span>
+        <span class="logo-text">Buongiorno Sosnowiec</span>
+      </a>
+      <ul class="nav-links" id="nav-links" role="navigation" aria-label="Główne menu">
+        <li><a href="#menu" class="nav-link">Menu</a></li>
+        <li><a href="#o-nas" class="nav-link">O Nas</a></li>
+        <li><a href="#opinie" class="nav-link">Opinie</a></li>
+        <li><a href="#kontakt" class="nav-link nav-cta">Rezerwacja</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="nav-links">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <header class="hero" id="hero">
+    <div class="hero-bg" id="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge fade-in-up" data-delay="0">
+        <span>🏅 Sosnowiec's #1 Bistro</span>
+      </div>
+      <h1 class="hero-title fade-in-up" data-delay="150">
+        Prawdziwy smak<br>
+        <em>słonecznej Italii</em>
+      </h1>
+      <p class="hero-subtitle fade-in-up" data-delay="300">
+        Chrupiące ciasto, ciągnący się ser i zapach pieca.<br>
+        Usiądź, zjedz i poczuj się jak w domu.
+      </p>
+      <div class="hero-buttons fade-in-up" data-delay="450">
+        <a href="#menu" class="btn-gold" id="hero-menu-btn">Odkryj Menu</a>
+        <a href="#" onclick="copyContact(event, '+48531922268')" class="btn-outline" id="hero-call-btn">Zadzwoń</a>
+      </div>
+      <div class="hero-stats fade-in-up" data-delay="600">
+        <div class="stat">
+          <span class="stat-number">8+</span>
+          <span class="stat-label">Lat Tradycji</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Świeże Składniki</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">⭐ 4.9</span>
+          <span class="stat-label">Ocena Gości</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>Przewiń w dół</span>
+    </div>
+  </header>
+
+  <!-- ===== ANNOUNCEMENT STRIP ===== -->
+  <div class="announcement-strip" aria-label="Godziny otwarcia">
+    <div class="strip-track">
+      <span>🕐 Pon: 12:00–20:00</span>
+      <span>🌟</span>
+      <span>🕑 Wt–Czw: 11:00–20:00</span>
+      <span>🌟</span>
+      <span>🎉 Pt–Sob: 11:00–21:00</span>
+      <span>🌟</span>
+      <span>🕑 Nd: 12:00–20:00</span>
+      <span>🌟</span>
+      <span>📍 ul. Kościelna 52, Sosnowiec</span>
+      <span>🌟</span>
+      <span>📞 +48 531 922 268</span>
+      <span>🌟</span>
+      <!-- Repeat for seamless loop -->
+      <span>🕐 Pon: 12:00–20:00</span>
+      <span>🌟</span>
+      <span>🕑 Wt–Czw: 11:00–20:00</span>
+      <span>🌟</span>
+      <span>🎉 Pt–Sob: 11:00–21:00</span>
+      <span>🌟</span>
+      <span>🕑 Nd: 12:00–20:00</span>
+      <span>🌟</span>
+      <span>📍 ul. Kościelna 52, Sosnowiec</span>
+      <span>🌟</span>
+      <span>📞 +48 531 922 268</span>
+      <span>🌟</span>
+    </div>
+  </div>
+
+  <!-- ===== MENU SECTION ===== -->
+  <section id="menu" class="section menu-section" aria-labelledby="menu-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Nasze Specjalności</p>
+        <h2 class="section-title" id="menu-heading">Co dziś gotujemy?</h2>
+        <p class="section-desc">Każde danie przygotowywane jest świeżo, z lokalnych składników, z miłością i bez kompromisów.</p>
+      </div>
+
+      <div class="menu-grid">
+
+        <div class="menu-card reveal" data-delay="0">
+          <div class="menu-card-emoji">🍕</div>
+          <div class="menu-card-badge">Bestseller</div>
+          <div class="menu-card-body">
+            <h3>Pizza Margherita</h3>
+            <p>Klasyczna włoska pizza z sosem z pomidorów pelati, mozzarellą fior di latte i świeżą bazylią.</p>
+            <div class="menu-card-tags">
+              <span class="tag">🧀 Pomidory</span>
+              <span class="tag">🌶️ Mozzarella</span>
+              <span class="tag">❤️ Klasyk</span>
+            </div>
+          </div>
+          <div class="menu-card-footer">
+            <span class="menu-price">od 24 zł</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-delay="100">
+          <div class="menu-card-emoji">🍅</div>
+          <div class="menu-card-body">
+            <h3>Pizza Capricciosa</h3>
+            <p>Włoska szynka cotto, świeże pieczarki, karczochy i czarne oliwki na chrupiącym cieście.</p>
+            <div class="menu-card-tags">
+              <span class="tag">🍅 Szynka Cotto</span>
+              <span class="tag">🍓 Pieczarki</span>
+              <span class="tag">🌿 Karczochy</span>
+            </div>
+          </div>
+          <div class="menu-card-footer">
+            <span class="menu-price">od 36 zł</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-delay="200">
+          <div class="menu-card-emoji">🧀</div>
+          <div class="menu-card-badge">Klasyk</div>
+          <div class="menu-card-body">
+            <h3>Pizza Parma</h3>
+            <p>Królowa pizz – dojrzewająca szynka parmeńska, pomidorki koktajlowe, rukola i płatki parmezanu.</p>
+            <div class="menu-card-tags">
+              <span class="tag">🍕 Szynka Parmeńska</span>
+              <span class="tag">🥬 Rukola</span>
+              <span class="tag">💪 Parmezan</span>
+            </div>
+          </div>
+          <div class="menu-card-footer">
+            <span class="menu-price">od 36 zł</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-delay="300">
+          <div class="menu-card-emoji">🍕</div>
+          <div class="menu-card-body">
+            <h3>Prawdziwe Tiramisu</h3>
+            <p>Domowy włoski deser na bazie biszkoptów nasączonych espresso z puszystym kremem mascarpone. Idealne na słodkie zakończenie obiadu.</p>
+            <div class="menu-card-tags">
+              <span class="tag">🍫 Espresso</span>
+              <span class="tag">🍓 Mascarpone</span>
+              <span class="tag">🍅 Kakao</span>
+            </div>
+          </div>
+          <div class="menu-card-footer">
+            <span class="menu-price">od 18 zł</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-delay="400">
+          <div class="menu-card-emoji">🍷</div>
+          <div class="menu-card-badge">Unikat!</div>
+          <div class="menu-card-body">
+            <h3>Aperol Spritz</h3>
+            <p>Klasyczny włoski koktajl z prosecco, idealny na ciepłe popołudnia.</p>
+            <div class="menu-card-tags">
+              <span class="tag">🇨🇿 Włoski</span>
+              <span class="tag">🚿 Orzeźwiający</span>
+              <span class="tag">🧊 Z pomarańczą</span>
+            </div>
+          </div>
+          <div class="menu-card-footer">
+            <span class="menu-price">od 22 zł</span>
+          </div>
+        </div>
+
+        <div class="menu-card menu-card--promo reveal" data-delay="500">
+          <div class="menu-promo-inner">
+            <div class="menu-promo-emoji">👨‍🍳</div>
+            <h3>Danie Dnia</h3>
+            <p>Każdego dnia nasz kucharz przygotowuje specjalne danie – sezonowe, świeże i zawsze zaskakujące. Zadzwoń i zapytaj co mamy dziś!</p>
+            <a href="#" onclick="copyContact(event, '+48531922268')" class="btn-gold-sm" id="call-chef-btn">Zadzwoń i Zapytaj</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY SECTION ===== -->
+  
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="o-nas" class="section about-section" aria-labelledby="about-heading">
+    <div class="container about-container">
+
+      <div class="about-images reveal">
+        <div class="about-img-main">
+          <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=800&auto=format&fit=crop" alt="Jedzenie domowe jak u mamy" loading="lazy" />
+        </div>
+        <div class="about-img-secondary">
+          <img src="https://images.unsplash.com/photo-1555072956-7758afb20e8f?q=80&w=600&auto=format&fit=crop" alt="Kuchnia bistro – przygotowanie potraw" loading="lazy" />
+          <div class="about-img-badge">
+            <span class="badge-number">8+</span>
+            <span class="badge-text">Lat smakowania życia</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-content reveal" data-delay="200">
+        <p class="section-eyebrow">Nasza Historia</p>
+        <h2 class="section-title left-aligned" id="about-heading">Z miłości do<br>włoskiej pizzy</h2>
+        <p class="about-text">
+          Pizzeria <strong>"Buongiorno"</strong> to miejsce, w którym na nowo definiujemy włoską klasykę w sercu Sosnowca.
+        </p>
+        <p class="about-text">
+          Codziennie rano wyrabiamy ciasto, które dojrzewa przez 24 godziny, aby po wypieczeniu było idealnie lekkie i chrupiące i czekamy na Ciebie z otwartymi drzwiami i szerokim uśmiechem.
+        </p>
+
+        <div class="about-timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot">🍕</div>
+            <div class="timeline-content">
+              <h4>Świeże składniki</h4>
+              <p>Codziennie dostarczane od lokalnych dostawców</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot">👩‍🍳</div>
+            <div class="timeline-content">
+              <h4>Domowe receptury</h4>
+              <p>Przepisy przekazywane z pokolenia na pokolenie</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot">💛</div>
+            <div class="timeline-content">
+              <h4>Ciepła atmosfera</h4>
+              <p>Jak u babci – bez pośpiechu, z sercem na talerzu</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#kontakt" class="btn-gold" id="about-cta-btn">Odwiedź Nas</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS SECTION ===== -->
+  <section id="opinie" class="section testimonials-section" aria-labelledby="testimonials-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Opinie Gości</p>
+        <h2 class="section-title" id="testimonials-heading">Co mówią nasi goście?</h2>
+      </div>
+
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card reveal" data-delay="0">
+          <div class="testimonial-stars" aria-label="5 gwiazdek">★★★★★</div>
+          <blockquote class="testimonial-text">
+            „Najlepsza pizza, jaką jadłam w Sosnowcu! Ciasto idealnie cienkie, a składników mnóstwo. Już w piątek wracam z całą rodziną. Polecam z całego serca!"
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">MK</div>
+            <div class="testimonial-info">
+              <strong>Marta Kowalska</strong>
+              <span>Sosnowiec · Google Maps</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal" data-delay="150">
+          <div class="testimonial-stars" aria-label="5 gwiazdek">★★★★★</div>
+          <blockquote class="testimonial-text">
+            „Włochy na talerzu! Pizza Parma to po prostu mistrzostwo, a Tiramisu to idealne zakończenie. Rewelacja!"
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">PW</div>
+            <div class="testimonial-info">
+              <strong>Piotr Wróbel</strong>
+              <span>Dąbrowa Górnicza · Google Maps</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal" data-delay="300">
+          <div class="testimonial-stars" aria-label="5 gwiazdek">★★★★★</div>
+          <blockquote class="testimonial-text">
+            „Byłam tu po raz pierwszy i wyszłam z postanowieniem, że będę wracać co tydzień. Capricciosa to cudo! Smak jak z dzieciństwa, atmosfera jak u babci. Przepiękne miejsce!"
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">AN</div>
+            <div class="testimonial-info">
+              <strong>Agnieszka Nowak</strong>
+              <span>Będzin · Google Maps</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT / FOOTER SECTION ===== -->
+  <footer id="kontakt" class="footer" aria-labelledby="contact-heading">
+    <div class="footer-top">
+      <div class="container footer-top-container">
+        <div class="footer-brand reveal">
+          <div class="footer-logo">
+            <span class="logo-icon">🍕</span>
+            <span>Buongiorno Sosnowiec</span>
+          </div>
+          <p>Tradycyjna kuchnia polska w sercu Sosnowca. Zapraszamy na obiady, które smakują jak u mamy.</p>
+          <div class="footer-social" aria-label="Media społecznościowe">
+            <a href="#" class="social-btn" aria-label="Facebook" id="social-fb">f</a>
+            <a href="#" class="social-btn" aria-label="Instagram" id="social-ig">ig</a>
+          </div>
+        </div>
+
+        <div class="footer-info reveal" data-delay="100">
+          <h3 id="contact-heading">Znajdź Nas</h3>
+          <ul class="footer-list">
+            <li>
+              <span class="footer-icon" aria-hidden="true">📍</span>
+              <span>ul. Kościelna 52<br>41-200 Sosnowiec</span>
+            </li>
+            <li>
+              <span class="footer-icon" aria-hidden="true">📞</span>
+              <a href="#" onclick="copyContact(event, '+48531922268')">+48 531 922 268</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-hours reveal" data-delay="200">
+          <h3>Godziny Otwarcia</h3>
+          <ul class="hours-list">
+            <li>
+              <span class="day">Poniedziałek</span>
+              <span class="hours">12:00 – 20:00</span>
+            </li>
+            <li>
+              <span class="day">Wt. – Czw.</span>
+              <span class="hours">11:00 – 20:00</span>
+            </li>
+            <li class="hours-highlight">
+              <span class="day">Pt. – Sob.</span>
+              <span class="hours">11:00 – 21:00 🎉</span>
+            </li>
+            <li>
+              <span class="day">Niedziela</span>
+              <span class="hours">12:00 – 20:00</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-reserve reveal" data-delay="300">
+          <h3>Rezerwacja Stolika</h3>
+          <p>Zarezerwuj stolik telefonicznie – zadzwoń do nas, a my zadbamy o resztę!</p>
+          <a href="#" onclick="copyContact(event, '+48531922268')" class="btn-gold" id="footer-reserve-btn">
+            📞 Zadzwoń Teraz
+          </a>
+          <p class="footer-note">Lub przyjdź bez rezerwacji – zawsze znajdziemy dla Ciebie miejsce!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 Buongiorno Sosnowiec. Wszelkie prawa zastrzeżone.</p>
+        <p>Projekt &amp; realizacja: <strong>Snap Code Studio</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING CTA BUTTON ===== -->
+  <a href="#" onclick="copyContact(event, '+48531922268')" class="floating-cta" id="floating-cta" aria-label="Zadzwoń teraz: +48 531 922 268">
+    <span class="floating-cta-icon">📞</span>
+    <span class="floating-cta-text">Zadzwoń Teraz</span>
+  </a>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button class="back-to-top" id="back-to-top" aria-label="Wróć na górę" title="Wróć na górę">
+    ↑
+  </button>
+
+  <script src="./app.js"></script>
+</body>
+</html>

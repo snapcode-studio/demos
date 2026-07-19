@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buty — PACE Sportswear</title>
+  <meta name="description" content="Pełna kolekcja butów PACE — biegowe, treningowe, basketball i lifestyle. Filtruj i znajdź idealne buty." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div id="scroll-bar"></div>
+
+<!-- NAV -->
+<nav class="nav nav--light" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">PACE</a>
+    <ul class="nav__links">
+      <li><a href="shoes.html"    class="nav__link nav__link--active">Buty</a></li>
+      <li><a href="clothing.html" class="nav__link">Odzież</a></li>
+      <li><a href="about.html"    class="nav__link">O marce</a></li>
+    </ul>
+    <div class="nav__actions">
+      <button class="nav__btn" aria-label="Szukaj"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg></button>
+      <button class="nav__btn" aria-label="Koszyk" style="position:relative"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4ZM3 6h18M16 10a4 4 0 0 1-8 0"/></svg><span class="nav__badge">2</span></button>
+      <button class="nav__ham" id="ham" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="drawer" id="drawer" role="dialog" aria-modal="true">
+  <button id="drawer-close" style="position:absolute;top:20px;right:var(--pad);color:#fff;font-size:28px;">✕</button>
+  <nav>
+    <a href="shoes.html"    class="drawer__link">Buty</a>
+    <a href="clothing.html" class="drawer__link">Odzież</a>
+    <a href="about.html"    class="drawer__link">O marce</a>
+  </nav>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-head">
+  <div class="page-head__ghost" aria-hidden="true">SHOES</div>
+  <div class="wrap">
+    <h1 class="page-head__title">Buty<br>PACE</h1>
+    <p class="page-head__sub">120 modeli · Biegowe, Training, Basketball, Lifestyle</p>
+  </div>
+</div>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <div class="toolbar__inner">
+    <div class="chips" role="group" aria-label="Filtruj według kategorii">
+      <button class="chip chip--active" data-filter="all">Wszystkie</button>
+      <button class="chip" data-filter="run">Biegowe</button>
+      <button class="chip" data-filter="training">Training</button>
+      <button class="chip" data-filter="basketball">Basketball</button>
+      <button class="chip" data-filter="lifestyle">Lifestyle</button>
+      <button class="chip" data-filter="new">Nowości</button>
+      <button class="chip" data-filter="sale">Sale</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;flex-shrink:0;">
+      <span class="toolbar__count">120 produktów</span>
+      <select class="toolbar__sort" aria-label="Sortuj produkty">
+        <option>Polecane</option>
+        <option>Cena: rosnąco</option>
+        <option>Cena: malejąco</option>
+        <option>Nowości</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="section">
+  <div class="wrap">
+    <div class="pgrid pgrid--4">
+
+      <article class="pcard reveal">
+        <div class="pcard__img-box">
+          <span class="pcard__badge pcard__badge--lime">Bestseller</span>
+          <button class="pcard__wish" aria-label="Ulubione"><svg width="14" height="14" fill="none" stroke="#0a0a0a" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+          <img class="pcard__img" src="images/shoe-p1.jpg" alt="PACE Velocity X1" loading="lazy" />
+          <div class="pcard__overlay">Szybki podgląd</div>
+        </div>
+        <p class="pcard__sub">Biegowe</p>
+        <h3 class="pcard__name">Velocity X1</h3>
+        <p class="pcard__price">549 zł</p>
+        <div class="pcard__dots">
+          <span class="dot dot--active" style="background:#0a0a0a;"></span>
+          <span class="dot" style="background:#c8f500;"></span>
+          <span class="dot dot--ring" style="background:#fff;"></span>
+        </div>
+      </article>
+
+      <article class="pcard reveal reveal-d1">
+        <div class="pcard__img-box">
+          <span class="pcard__badge pcard__badge--new">Nowość</span>
+          <button class="pcard__wish" aria-label="Ulubione"><svg width="14" height="14" fill="none" stroke="#0a0a0a" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+          <img class="pcard__img" src="images/shoe-p2.jpg" alt="PACE AeroFit Pro" loading="lazy" />
+          <div class="pcard__overlay">Szybki podgląd</div>
+        </div>
+        <p class="pcard__sub">Training</p>
+        <h3 class="pcard__name">AeroFit Pro</h3>
+        <div class="pcard__price"><span class="pcard__price--sale">429 zł</span><span class="pcard__price--orig">589 zł</span></div>
+        <div class="pcard__dots">
+          <span class="dot dot--active dot--ring" style="background:#fff;"></span>
+          <span class="dot" style="background:#e8001a;"></span>
+        </div>
+      </article>
+
+      <article class="pcard reveal reveal-d2">
+        <div class="pcard__img-box">
+          <span class="pcard__badge pcard__badge--sale">-20%</span>
+          <button class="pcard__wish" aria-label="Ulubione"><svg width="14" height="14" fill="none" stroke="#0a0a0a" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+          <img class="pcard__img" src="images/shoe-p3.jpg" alt="PACE Court Elite" loading="lazy" />
+          <div class="pcard__overlay">Szybki podgląd</div>
+        </div>
+        <p class="pcard__sub">Basketball</p>
+        <h3 class="pcard__name">Court Elite</h3>
+        <div class="pcard__price"><span class="pcard__price--sale">649 zł</span><span class="pcard__price--orig">799 zł</span></div>
+        <div class="pcard__dots"><span class="dot dot--active" style="background:#0a0a0a;"></span><span class="dot" style="background:#b8860b;"></span></div>
+      </article>
+
+      <article class="pcard reveal reveal-d3">
+        <div class="pcard__img-box">
+          <button class="pcard__wish" aria-label="Ulubione"><svg width="14" height="14" fill="none" stroke="#0a0a0a" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+          <img class="pcard__img" src="images/shoe-p4.jpg" alt="PACE Stealth LS" loading="lazy" />
+          <div class="pcard__overlay">Szybki podgląd</div>
+        </div>
+        <p class="pcard__sub">Lifestyle</p>
+        <h3 class="pcard__name">Stealth LS</h3>
+        <p class="pcard__price">389 zł</p>
+        <div class="pcard__dots"><span class="dot dot--active" style="background:#888;"></span><span class="dot" style="background:#c8f500;"></span></div>
+      </article>
+
+      <article class="pcard reveal">
+        <div class="pcard__img-box">
+          <span class="pcard__badge pcard__badge--lime">Nowość</span>
+          <img class="pcard__img" src="images/shoe-p2.jpg" alt="PACE GridForce" loading="lazy" />
+          <div class="pcard__overlay">Szybki podgląd</div>
+        </div>
+        <p class="pcard__sub">Training</p>
+        <h3 class="pcard__name">GridForce</h3>
+        <p class="pcard__price">479 zł</p>
+      </article>
+
+      <article class="pcard reveal reveal-d1">
+        <div class="pcard__img-box">
+          <img class="pcard__img" src="images/shoe-p1.jpg" alt="PACE Phantom Runner" loading="lazy" />
+          <div class="pcard__overlay">Szybki podgląd</div>
+        </div>
+        <p class="pcard__sub">Biegowe</p>
+        <h3 class="pcard__name">Phantom Runner</h3>
+        <p class="pcard__price">699 zł</p>
+      </article>
+
+      <article class="pcard reveal reveal-d2">
+        <div class="pcard__img-box">
+          <span class="pcard__badge pcard__badge--sale">-15%</span>
+          <img class="pcard__img" src="images/shoe-p3.jpg" alt="PACE Apex High" loading="lazy" />
+          <div class="pcard__overlay">Szybki podgląd</div>
+        </div>
+        <p class="pcard__sub">Basketball</p>
+        <h3 class="pcard__name">Apex High</h3>
+        <div class="pcard__price"><span class="pcard__price--sale">569 zł</span><span class="pcard__price--orig">669 zł</span></div>
+      </article>
+
+      <article class="pcard reveal reveal-d3">
+        <div class="pcard__img-box">
+          <img class="pcard__img" src="images/shoe-p4.jpg" alt="PACE SwiftRun" loading="lazy" />
+          <div class="pcard__overlay">Szybki podgląd</div>
+        </div>
+        <p class="pcard__sub">Biegowe</p>
+        <h3 class="pcard__name">SwiftRun</h3>
+        <p class="pcard__price">499 zł</p>
+      </article>
+
+    </div>
+
+    <div style="text-align:center;margin-top:64px;" class="reveal">
+      <button class="btn btn--ghost" style="padding:16px 64px;">Załaduj więcej (112)</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__top">
+    <div>
+      <p class="footer__logo">PACE</p>
+      <p class="footer__desc">Bez kompromisów. Bez ograniczeń.</p>
+    </div>
+    <div><p class="footer__col-h">Kategorie</p><ul class="footer__col-links"><li><a href="#" class="footer__col-link">Buty Biegowe</a></li><li><a href="#" class="footer__col-link">Basketball</a></li><li><a href="#" class="footer__col-link">Training</a></li><li><a href="#" class="footer__col-link">Lifestyle</a></li></ul></div>
+    <div><p class="footer__col-h">Marka</p><ul class="footer__col-links"><li><a href="about.html" class="footer__col-link">O Nas</a></li><li><a href="#" class="footer__col-link">Technologia</a></li></ul></div>
+    <div><p class="footer__col-h">Pomoc</p><ul class="footer__col-links"><li><a href="#" class="footer__col-link">Rozmiarówka</a></li><li><a href="#" class="footer__col-link">Zwroty</a></li><li><a href="#" class="footer__col-link">Kontakt</a></li></ul></div>
+  </div>
+  <div class="footer__bottom"><p class="footer__copy">© 2026 PACE.</p></div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
