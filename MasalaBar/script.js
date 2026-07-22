@@ -55,26 +55,15 @@ if (cursor && follower && window.innerWidth > 768) {
     spawnShockwave(e.clientX, e.clientY, true);
   });
 
-  // Cards, images, and widget (NOT buttons): expand cursor follower into glowing shockwave aura
-  document.querySelectorAll('.widget-glass-container, .masonry-item, .review-card, .img-wrapper').forEach(el => {
-    el.addEventListener('mouseenter', e => {
-      cursor.classList.add('cursor-expanded');
-      follower.classList.add('cursor-expanded');
-      spawnShockwave(e.clientX, e.clientY, false);
-    });
-    el.addEventListener('mouseleave', () => {
-      cursor.classList.remove('cursor-expanded');
-      follower.classList.remove('cursor-expanded');
-    });
-  });
-
-  // Standard interactive elements (buttons/links): subtle hover pulse without card shockwave
-  document.querySelectorAll('a, button').forEach(el => {
+  // Hover scale for interactive elements, cards, widget, and images
+  document.querySelectorAll('a, button, .widget-glass-container, .masonry-item, .review-card, .img-wrapper').forEach(el => {
     el.addEventListener('mouseenter', () => {
       follower.style.transform = 'translate(-50%,-50%) scale(1.35)';
+      follower.style.borderColor = 'rgba(245, 207, 104, 0.9)';
     });
     el.addEventListener('mouseleave', () => {
       follower.style.transform = 'translate(-50%,-50%) scale(1)';
+      follower.style.borderColor = 'rgba(212, 175, 55, 0.7)';
     });
   });
 }
