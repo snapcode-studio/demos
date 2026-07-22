@@ -3,23 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Masala Bar | Ekskluzywna Kuchnia Indyjska w Rybniku</title>
+  <title>Masala Bar | Wegetariańska Kuchnia Indyjska w Rybniku</title>
   
   <!-- SEO & Meta -->
-  <meta name="description" content="Autentyczne smaki Indii w Rybniku. Odkryj bogactwo przypraw i luksusowe doznania kulinarne w Masala Bar.">
+  <meta name="description" content="Autentyczne smaki Indii w Rybniku. Odkryj bogactwo przypraw i zdrowe doznania kulinarne w Masala Bar.">
   
-  <!-- Fonts: Cinzel for headings (elegant), Outfit for body (modern, readable) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#871515">
+
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
   
-  <!-- GSAP & Lenis for Smooth Scrolling -->
+  <!-- GSAP & Lenis -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
@@ -27,237 +35,218 @@
 <body>
 
   <!-- Preloader -->
-  <div class="preloader">
+  <div class="preloader" id="preloader">
     <div class="preloader-logo">MASALA<span>BAR</span></div>
     <div class="progress-bar"><div class="progress"></div></div>
   </div>
 
-  <!-- Custom Cursor -->
+  <!-- Custom Cursor (desktop only) -->
   <div class="cursor"></div>
   <div class="cursor-follower"></div>
 
   <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#" class="logo">MASALA<span>BAR</span></a>
-      <ul class="nav-links">
+
+      <ul class="nav-links" id="navLinks">
         <li><a href="#about" class="hover-line">O Nas</a></li>
         <li><a href="#gallery" class="hover-line">Galeria</a></li>
-        <li><a href="#menu" class="hover-line">Menu & Filtry</a></li>
-        <li><a href="#benefits" class="hover-line">Korzyści SnapMenu</a></li>
+        <li><a href="#menu" class="hover-line">Menu</a></li>
         <li><a href="#reviews" class="hover-line">Opinie</a></li>
+        <li>
+          <a href="tel:+48324220000" class="btn-call-nav" id="navCallBtn" title="Zadzwoń lub skopiuj numer">
+            <i class="fas fa-phone-alt"></i>
+            <span>32 422 00 00</span>
+            <span class="copy-tooltip" id="copyTooltip">Skopiowano!</span>
+          </a>
+        </li>
       </ul>
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <a href="tel:+48324220000" class="btn-call-nav" id="navCallBtn" title="Kliknij, aby zadzwonić lub skopiować numer">
-          <i class="fas fa-phone-alt"></i> <span>32 422 00 00</span>
-          <span class="copy-tooltip" id="copyTooltip">Skopiowano numer!</span>
-        </a>
-        <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
-      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Otwórz menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Zamknij menu">
+      <i class="fas fa-times"></i>
+    </button>
+    <nav class="mobile-nav">
+      <a href="#about" class="mobile-nav-link">O Nas</a>
+      <a href="#gallery" class="mobile-nav-link">Galeria</a>
+      <a href="#menu" class="mobile-nav-link">Menu</a>
+      <a href="#reviews" class="mobile-nav-link">Opinie</a>
+    </nav>
+    <div class="mobile-menu-footer">
+      <a href="tel:+48324220000" class="mobile-call-btn">
+        <i class="fas fa-phone-alt"></i>
+        <div>
+          <span class="mobile-call-label">Zadzwoń do nas</span>
+          <span class="mobile-call-number">32 422 00 00</span>
+        </div>
+      </a>
+      <div class="mobile-hours">
+        <span><i class="fas fa-clock"></i> Pon–Sob: 11:00–18:00 &nbsp;|&nbsp; Nd: 12:00–17:00</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
   <header id="home" class="hero">
     <div class="hero-bg">
-      <img src="assets/restauracja.jpg" alt="Masala Bar Restaurant">
+      <img src="assets/photo-hero.webp" alt="Masala Bar Restaurant" loading="eager">
       <div class="hero-overlay"></div>
     </div>
-    
     <div class="hero-content">
-      <div class="hero-badge animate-fade">Zielone miejsce w Rybniku</div>
+      <div class="hero-badge animate-fade">🌿 Zielone miejsce w Rybniku</div>
       <h1 class="animate-split">
         Zdrowie z serca<br>
         <span class="gold-text">Indii</span>
       </h1>
       <p class="animate-fade delay-1">Prawdziwie wegetariańska oaza. Zjedz smacznie, dostarcz organizmowi dobrej energii i poczuj magię orientu.</p>
-      
       <div class="hero-actions animate-fade delay-2">
-        <a href="tel:+48324220000" class="btn-primary call-hero-btn"><i class="fas fa-phone-alt"></i> Zadzwoń: 32 422 00 00</a>
-        <a href="#menu" class="btn-text">Zobacz Menu & Filtry <i class="fas fa-arrow-right"></i></a>
+        <a href="tel:+48324220000" class="btn-primary">
+          <i class="fas fa-phone-alt"></i> Zadzwoń: 32 422 00 00
+        </a>
+        <a href="#menu" class="btn-text">
+          Zobacz Menu <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
     </div>
-    
     <div class="scroll-indicator">
       <div class="scroll-text">Scroll</div>
       <div class="scroll-line"></div>
     </div>
   </header>
 
-  <!-- About Section -->
+  <!-- About -->
   <section id="about" class="about section-padding">
     <div class="container">
       <div class="grid-2 align-center">
         <div class="about-images">
-          <div class="img-wrapper img-main parallax-img">
-            <img src="assets/jedzenie.jpg" alt="Pyszne jedzenie Masala Bar">
+          <div class="img-wrapper img-main">
+            <img src="assets/photo-section.webp" alt="Pyszne jedzenie Masala Bar" loading="lazy">
           </div>
-          <div class="img-wrapper img-accent parallax-img-reverse">
-            <img src="assets/ciasto.jpg" alt="Wegetariańskie desery">
+          <div class="img-wrapper img-accent">
+            <img src="assets/photo4.webp" alt="Wegetariańskie desery" loading="lazy">
           </div>
           <div class="experience-badge">
             <span class="num">4.8</span>
-            <span class="text">Na podst. 89 opinii</span>
+            <span class="text">89 opinii</span>
           </div>
         </div>
-        
-        <div class="about-text">
+        <div class="about-text fade-up">
           <h4 class="section-subtitle">O Nas</h4>
           <h2 class="section-title">Harmonia Przypraw i <span>Zdrowia</span></h2>
           <p class="lead">Masala Bar to wegetariańska oaza w sercu Rybnika. Oferujemy zdrową, pełną energii kuchnię, która zachwyca nie tylko smakiem, ale i jakością składników.</p>
-          <p>Niezależnie od tego, czy szukasz szybkiego i sycącego posiłku na miejscu, czy wolisz wziąć pyszne danie na wynos, nasza kuchnia wegetariańska dostarczy Ci niezapomnianych wrażeń w przystępnej cenie (20–40 zł za osobę).</p>
-          
+          <p>Niezależnie od tego, czy szukasz szybkiego i sycącego posiłku na miejscu, czy wolisz wziąć pyszne danie na wynos, nasza kuchnia wegetariańska dostarczy Ci niezapomnianych wrażeń w przystępnej cenie&nbsp;(20–40&nbsp;zł za osobę).</p>
           <ul class="features-list">
-            <li><i class="fas fa-check"></i> Kuchnia wegetariańska</li>
-            <li><i class="fas fa-check"></i> Zdrowe i pełne energii posiłki</li>
-            <li><i class="fas fa-check"></i> Na miejscu i na wynos</li>
+            <li><i class="fas fa-leaf"></i> Kuchnia w 100% wegetariańska</li>
+            <li><i class="fas fa-bolt"></i> Zdrowe i pełne energii posiłki</li>
+            <li><i class="fas fa-motorcycle"></i> Na miejscu i na wynos</li>
           </ul>
+          <a href="tel:+48324220000" class="btn-primary" style="margin-top:2rem;display:inline-flex;gap:8px;align-items:center;">
+            <i class="fas fa-phone-alt"></i> Zadzwoń i zamów
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Gallery Section -->
+  <!-- Gallery -->
   <section id="gallery" class="gallery section-padding bg-dark">
     <div class="container">
-      <div class="text-center section-header">
+      <div class="text-center section-header fade-up">
         <h4 class="section-subtitle">Galeria</h4>
         <h2 class="section-title">Nasze <span>Dania</span></h2>
       </div>
-      
       <div class="masonry-grid">
         <div class="masonry-item item-1 fade-up">
-          <img src="assets/salatka.jpg" alt="Świeża sałatka">
+          <img src="assets/photo1.webp" alt="Świeża sałatka" loading="lazy">
           <div class="item-overlay"><span>Zdrowe Sałatki</span></div>
         </div>
-        <div class="masonry-item item-2 fade-up" style="transition-delay: 0.1s;">
-          <img src="assets/arbuz_surowka_i_jakies_jedzenie.jpg" alt="Zestaw lunchowy">
+        <div class="masonry-item item-2 fade-up" style="transition-delay:0.1s">
+          <img src="assets/photo2.webp" alt="Zestaw lunchowy" loading="lazy">
           <div class="item-overlay"><span>Pełnowartościowe Posiłki</span></div>
         </div>
-        <div class="masonry-item item-3 fade-up" style="transition-delay: 0.2s;">
-          <img src="assets/nalesniki.jpg" alt="Naleśniki">
+        <div class="masonry-item item-3 fade-up" style="transition-delay:0.2s">
+          <img src="assets/photo3.webp" alt="Naleśniki" loading="lazy">
           <div class="item-overlay"><span>Słodkości & Naleśniki</span></div>
         </div>
-        <div class="masonry-item item-4 fade-up" style="transition-delay: 0.3s;">
-          <img src="assets/ciasto.jpg" alt="Ciasto">
+        <div class="masonry-item item-4 fade-up" style="transition-delay:0.3s">
+          <img src="assets/photo4.webp" alt="Ciasto" loading="lazy">
           <div class="item-overlay"><span>Domowe Wypieki</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Menu Widget Section -->
+  <!-- Menu Widget -->
   <section id="menu" class="menu-section section-padding">
-    <!-- Ornamental Background Pattern -->
     <div class="pattern-bg"></div>
-    
     <div class="container relative">
-      <div class="text-center section-header">
-        <h4 class="section-subtitle">Cyfrowe Menu Live</h4>
-        <h2 class="section-title">Sprawdź <span>Ofertę & Filtry</span></h2>
+      <div class="text-center section-header fade-up">
+        <h4 class="section-subtitle">Cyfrowe Menu</h4>
+        <h2 class="section-title">Sprawdź <span>Ofertę</span></h2>
         <p class="section-desc">Filtruj dania wegańskie, bezglutenowe i pikantne w czasie rzeczywistym.</p>
       </div>
-
       <div class="widget-showcase fade-up">
-        <!-- Floating Elements around Widget -->
         <div class="float-element leaf-1"><i class="fab fa-envira"></i></div>
         <div class="float-element spice-1"><i class="fas fa-pepper-hot"></i></div>
-        
-        <div class="widget-glass-container" id="pitchWidgetContainer">
-          <!-- WIDGET EMBED (using menu.getsnap.space domain) -->
-          <iframe 
-            src="https://menu.getsnap.space/w/masalabar?id=masalabar" 
+        <div class="widget-glass-container">
+          <iframe
+            src="https://menu.getsnap.space/w/masalabar?id=masalabar"
             id="widgetIframe"
-            width="100%" 
-            height="380" 
-            frameborder="0" 
+            width="100%"
+            height="400"
+            frameborder="0"
             loading="lazy"
-            style="transition: height 0.5s ease;">
+            title="Menu Masala Bar">
           </iframe>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Business Benefits Section (Sales Value Pitch) -->
-  <section id="benefits" class="benefits-section section-padding bg-dark">
+  <!-- Reviews -->
+  <section id="reviews" class="reviews section-padding bg-dark">
     <div class="container">
-      <div class="text-center section-header">
-        <h4 class="section-subtitle">Korzyści Dla Biznesu</h4>
-        <h2 class="section-title">Dlaczego ten prototyp <span>zwiększa zyski</span>?</h2>
-        <p class="section-desc">Połączenie strony WWW z cyfrowym menu SnapMenu daje restauracji realną przewagę rynkową.</p>
-      </div>
-
-      <div class="benefits-grid">
-        <div class="benefit-card fade-up">
-          <div class="benefit-icon"><i class="fas fa-bolt"></i></div>
-          <h3>Menu Dnia w 30 Sekund</h3>
-          <p>Właściciel zmienia danie dnia lub ceny ze smartfona w aplikacji SnapMenu. Bez informatyka i bez kosztów druku.</p>
-          <span class="benefit-tag">Rozwiązanie SnapMenu</span>
-        </div>
-
-        <div class="benefit-card fade-up" style="transition-delay: 0.1s;">
-          <div class="benefit-icon"><i class="fas fa-phone-alt"></i></div>
-          <h3>Wzrost Zamówień Telefonicznych</h3>
-          <p>Dedykowany przycisk szybkiego wyboru połączenia kieruje klientów bezpośrednio na telefon bez 30% prowizji pośredników.</p>
-          <span class="benefit-tag">0% Prowizji dla Aplikacji</span>
-        </div>
-
-        <div class="benefit-card fade-up" style="transition-delay: 0.2s;">
-          <div class="benefit-icon"><i class="fas fa-filter"></i></div>
-          <h3>Filtry Diety & Alergenów</h3>
-          <p>Natychmiastowe filtrowanie dań wegańskich, bezglutenowych i pikantnych podnosi konwersję i wygodę na telefonach.</p>
-          <span class="benefit-tag">Wygoda Mobile-First</span>
-        </div>
-
-        <div class="benefit-card fade-up" style="transition-delay: 0.3s;">
-          <div class="benefit-icon"><i class="fas fa-qrcode"></i></div>
-          <h3>Kody QR na Stoliki i Wynos</h3>
-          <p>Gotowy generator kodów QR na stojaczki i ulotki. Goście skanują kod telefonem bez pobierania żadnej aplikacji.</p>
-          <span class="benefit-tag">Gotowe do Druku</span>
+      <div class="text-center section-header fade-up">
+        <h4 class="section-subtitle">Opinie Gości</h4>
+        <h2 class="section-title">Oceny z <span>Google</span></h2>
+        <div class="rating-summary">
+          <div class="rating-big">4.8</div>
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+          <div class="rating-count">Na podstawie 89 opinii</div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Reviews Section -->
-  <section id="reviews" class="reviews section-padding">
-    <div class="container">
-      <h2 class="section-title text-center" style="margin-bottom: 4rem;">Oceny z <span>Google</span></h2>
-      <div class="text-center" style="margin-bottom: 3rem;">
-        <div style="font-size: 3rem; color: var(--gold); font-family: var(--font-heading); line-height: 1;">4.8</div>
-        <div class="stars" style="font-size: 1.2rem; margin: 0.5rem 0;">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-        </div>
-        <div style="color: var(--text-muted); font-size: 0.9rem;">Na podstawie 89 opinii</div>
-      </div>
-      
       <div class="reviews-grid">
         <div class="review-card fade-up">
-          <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
           <p class="review-text">"Jedzenie mega dobre. Świeże warzywa, świetnie dobrane przyprawy, bardzo sycące pyszności! Duży plus za wege opcje!"</p>
           <div class="reviewer">
             <div class="avatar">K</div>
-            <div class="info">
-              <h4>Kamil Z.</h4>
-              <span>Lokalny Przewodnik Google</span>
-            </div>
+            <div class="info"><h4>Kamil Z.</h4><span>Lokalny Przewodnik Google</span></div>
           </div>
         </div>
-        
-        <div class="review-card fade-up" style="transition-delay: 0.1s;">
-          <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
+        <div class="review-card fade-up" style="transition-delay:0.1s">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
           <p class="review-text">"Niesamowite miejsce na mapie Rybnika! Zdrowo, szybko, tanio i przesmacznie. Obsługa w Masala Bar to czyste złoto."</p>
           <div class="reviewer">
             <div class="avatar">A</div>
-            <div class="info">
-              <h4>Agnieszka W.</h4>
-              <span>Opinia z Google</span>
-            </div>
+            <div class="info"><h4>Agnieszka W.</h4><span>Opinia z Google</span></div>
+          </div>
+        </div>
+        <div class="review-card fade-up" style="transition-delay:0.2s">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="review-text">"Polecam każdemu kto lubi kuchnie indyjską i zdrowe jedzenie. Porcje są duże, smak rewelacyjny, a ceny bardzo przystępne!"</p>
+          <div class="reviewer">
+            <div class="avatar">M</div>
+            <div class="info"><h4>Marek P.</h4><span>Opinia z Google</span></div>
           </div>
         </div>
       </div>
@@ -270,49 +259,48 @@
       <div class="footer-grid">
         <div class="footer-col brand-col">
           <h3>MASALA<span>BAR</span></h3>
-          <p>Zielone miejsce w Rybniku. Zdrowa pełna energii kuchnia wegetariańska.</p>
-          <div class="social-links" style="margin-top: 1rem;">
-            <a href="https://m.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://masala.rybnik.pl" target="_blank"><i class="fas fa-globe"></i></a>
-          </div>
-          <div style="margin-top: 1rem; color: var(--text-muted); font-size: 0.8rem;">
-            3,7 tys. polubień • 3,7 tys. obserwujących
+          <p>Zielone miejsce w Rybniku. Zdrowa, pełna energii kuchnia wegetariańska.</p>
+          <div class="social-links">
+            <a href="https://m.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://masala.rybnik.pl" target="_blank" rel="noopener" aria-label="Strona WWW"><i class="fas fa-globe"></i></a>
           </div>
         </div>
-        
         <div class="footer-col">
           <h4>Odkrywaj</h4>
           <ul>
             <li><a href="#about">O Nas</a></li>
             <li><a href="#menu">Menu</a></li>
-            <li><a href="#benefits">Korzyści SnapMenu</a></li>
-            <li><a href="#gallery">Zdjęcia</a></li>
+            <li><a href="#gallery">Galeria</a></li>
+            <li><a href="#reviews">Opinie</a></li>
           </ul>
         </div>
-        
         <div class="footer-col">
           <h4>Godziny Otwarcia</h4>
           <ul class="hours">
-            <li><span>Pon - Sob</span> <span>11:00 - 18:00</span></li>
-            <li><span>Niedziela</span> <span>12:00 - 17:00</span></li>
+            <li><span>Pon – Sob</span><span>11:00 – 18:00</span></li>
+            <li><span>Niedziela</span><span>12:00 – 17:00</span></li>
           </ul>
+          <div class="footer-phone">
+            <a href="tel:+48324220000"><i class="fas fa-phone-alt"></i> 32 422 00 00</a>
+          </div>
         </div>
       </div>
-      
       <div class="footer-bottom">
         <p>&copy; 2026 Masala Bar Wegetariański.</p>
-        <p>Napędza <a href="https://getsnap.space" target="_blank">Snap Code Studio</a></p>
+        <p>Napędza <a href="https://getsnap.space" target="_blank" rel="noopener">Snap Code Studio</a></p>
       </div>
     </div>
   </footer>
 
-  <!-- Floating Call & Order Bar -->
-  <div class="floating-order-bar">
+  <!-- Floating Call Bar -->
+  <div class="floating-order-bar" id="floatingBar">
     <a href="tel:+48324220000" class="order-btn call-btn">
-      <i class="fas fa-phone-alt"></i> Zadzwoń: 32 422 00 00
+      <i class="fas fa-phone-alt"></i>
+      <span>32 422 00 00</span>
     </a>
     <a href="#menu" class="order-btn menu-btn">
-      <i class="fas fa-utensils"></i> Menu & Filtry
+      <i class="fas fa-utensils"></i>
+      <span>Menu</span>
     </a>
   </div>
 
