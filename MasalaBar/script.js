@@ -169,40 +169,36 @@ mobileOverlay.addEventListener('click', closeMobileMenu);
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileMenu(); });
 
 /* =============================================
-   WIDGET IFRAME — fix cursor freeze & Lenis jump
-   When the mouse enters the iframe, the document stops
-   receiving mousemove/wheel events, which:
-     1. Freezes the custom cursor at its last position
-     2. Causes Lenis to snap/jump on mouse-out
-   Fix: hide cursor while over the widget, pause Lenis.
+   WIDGET IFRAME — smooth wheel scroll & hide custom cursor
+   Hide custom cursor over iframe, forward wheel scroll to Lenis without freezing page scroll.
    ============================================= */
 const widgetContainer = document.querySelector('.widget-glass-container');
 
 if (widgetContainer) {
   widgetContainer.addEventListener('mouseenter', () => {
-    // Hide cursor elements so they don't freeze visibly
     if (cursor)   cursor.style.opacity   = '0';
     if (follower) follower.style.opacity = '0';
-    // Stop Lenis so it doesn't accumulate scroll momentum
-    lenis.stop();
   });
 
   widgetContainer.addEventListener('mouseleave', () => {
     if (cursor)   cursor.style.opacity   = '1';
     if (follower) follower.style.opacity = '1';
-    lenis.start();
   });
+
+  widgetContainer.addEventListener('wheel', (e) => {
+    if (lenis) {
+      lenis.scrollTo(lenis.scroll + e.deltaY * 0.85, { immediate: true });
+    }
+  }, { passive: true });
 }
 
 /* =============================================
-   COPY PHONE NUMBER (desktop nav button)
+   COPY PHONE NUMBER (all desktop call buttons)
    ============================================= */
-const navCallBtn   = document.getElementById('navCallBtn');
 const copyTooltip  = document.getElementById('copyTooltip');
 
-if (navCallBtn) {
-  navCallBtn.addEventListener('click', e => {
-    /* On desktop: prevent default tel: and copy instead */
+document.querySelectorAll('#navCallBtn, .call-btn-copy').forEach(btn => {
+  btn.addEventListener('click', e => {
     if (window.matchMedia('(pointer: fine)').matches) {
       e.preventDefault();
       const num = '32 422 00 00';
@@ -213,9 +209,8 @@ if (navCallBtn) {
       }
       showTooltip();
     }
-    /* On touch: let the tel: href do the call */
   });
-}
+});
 
 function legacyCopy(text) {
   const ta = document.createElement('textarea');
