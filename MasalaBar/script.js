@@ -25,7 +25,7 @@ const cursor   = document.querySelector('.cursor');
 const follower = document.querySelector('.cursor-follower');
 
 function spawnShockwave(x, y, isBig = false) {
-  if (!window.matchMedia('(pointer: fine)').matches) return;
+  if (window.innerWidth <= 768) return;
   const wave = document.createElement('div');
   wave.className = 'cursor-shockwave' + (isBig ? ' big-wave' : '');
   wave.style.left = x + 'px';
@@ -34,7 +34,7 @@ function spawnShockwave(x, y, isBig = false) {
   setTimeout(() => wave.remove(), 950);
 }
 
-if (cursor && follower && window.matchMedia('(pointer: fine)').matches) {
+if (cursor && follower && window.innerWidth > 768) {
   let mx = 0, my = 0, fx = 0, fy = 0;
 
   document.addEventListener('mousemove', e => {
@@ -44,8 +44,8 @@ if (cursor && follower && window.matchMedia('(pointer: fine)').matches) {
   });
 
   gsap.ticker.add(() => {
-    fx += (mx - fx) * 0.15;
-    fy += (my - fy) * 0.15;
+    fx += (mx - fx) * 0.18;
+    fy += (my - fy) * 0.18;
     follower.style.left = fx + 'px';
     follower.style.top  = fy + 'px';
   });
@@ -193,14 +193,17 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileM
 /* =============================================
    WIDGET IFRAME — smooth wheel scroll
    ============================================= */
-const widgetContainer = document.querySelector('.widget-glass-container');
+const iframe = document.getElementById('widgetIframe');
 
-if (widgetContainer) {
-  widgetContainer.addEventListener('wheel', (e) => {
-    if (lenis) {
-      lenis.scrollTo(lenis.scroll + e.deltaY * 0.85, { immediate: true });
-    }
-  }, { passive: true });
+if (iframe) {
+  let wheelTimeout;
+  window.addEventListener('wheel', () => {
+    iframe.style.pointerEvents = 'none';
+    clearTimeout(wheelTimeout);
+    wheelTimeout = setTimeout(() => {
+      iframe.style.pointerEvents = 'auto';
+    }, 250);
+  }, { passive: true, capture: true });
 }
 
 /* =============================================

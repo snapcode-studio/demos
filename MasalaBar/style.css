@@ -35,7 +35,7 @@ a  { color: inherit; }
 /* =============================================
    DYNAMIC CURSOR & SHOCKWAVE SYSTEM (desktop)
    ============================================= */
-@media (pointer: fine) {
+@media (min-width: 769px) {
   body { cursor: none; }
   .cursor {
     width: 8px; height: 8px;
@@ -132,8 +132,9 @@ a  { color: inherit; }
   }
 }
 
-@media (pointer: coarse) {
+@media (max-width: 768px) {
   .cursor, .cursor-follower, .cursor-shockwave { display: none !important; }
+  body { cursor: auto !important; }
 }
 
 /* =============================================
