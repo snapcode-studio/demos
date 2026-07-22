@@ -19,10 +19,20 @@ gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.defaults({ scroller: document.body });
 
 /* =============================================
-   CUSTOM CURSOR (desktop)
+   DYNAMIC SHOCKWAVE & CUSTOM CURSOR SYSTEM
    ============================================= */
 const cursor   = document.querySelector('.cursor');
 const follower = document.querySelector('.cursor-follower');
+
+function spawnShockwave(x, y, isBig = false) {
+  if (!window.matchMedia('(pointer: fine)').matches) return;
+  const wave = document.createElement('div');
+  wave.className = 'cursor-shockwave' + (isBig ? ' big-wave' : '');
+  wave.style.left = x + 'px';
+  wave.style.top = y + 'px';
+  document.body.appendChild(wave);
+  setTimeout(() => wave.remove(), 950);
+}
 
 if (cursor && follower && window.matchMedia('(pointer: fine)').matches) {
   let mx = 0, my = 0, fx = 0, fy = 0;
@@ -40,20 +50,31 @@ if (cursor && follower && window.matchMedia('(pointer: fine)').matches) {
     follower.style.top  = fy + 'px';
   });
 
-  document.querySelectorAll('a, button, .widget-glass-container, .masonry-item').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.style.transform   = 'translate(-50%,-50%) scale(1.6)';
-      cursor.style.background  = 'transparent';
-      cursor.style.border      = '1px solid var(--gold)';
-      follower.style.transform = 'translate(-50%,-50%) scale(1.5)';
-      follower.style.borderColor = 'transparent';
+  // Spawn shockwave ring on click anywhere
+  document.addEventListener('click', e => {
+    spawnShockwave(e.clientX, e.clientY, true);
+  });
+
+  // Cards, images, and widget (NOT buttons): expand cursor follower into glowing shockwave aura
+  document.querySelectorAll('.widget-glass-container, .masonry-item, .review-card, .img-wrapper').forEach(el => {
+    el.addEventListener('mouseenter', e => {
+      cursor.classList.add('cursor-expanded');
+      follower.classList.add('cursor-expanded');
+      spawnShockwave(e.clientX, e.clientY, false);
     });
     el.addEventListener('mouseleave', () => {
-      cursor.style.transform   = 'translate(-50%,-50%) scale(1)';
-      cursor.style.background  = 'var(--gold)';
-      cursor.style.border      = 'none';
+      cursor.classList.remove('cursor-expanded');
+      follower.classList.remove('cursor-expanded');
+    });
+  });
+
+  // Standard interactive elements (buttons/links): subtle hover pulse without card shockwave
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      follower.style.transform = 'translate(-50%,-50%) scale(1.35)';
+    });
+    el.addEventListener('mouseleave', () => {
       follower.style.transform = 'translate(-50%,-50%) scale(1)';
-      follower.style.borderColor = 'var(--gold)';
     });
   });
 }
@@ -158,33 +179,23 @@ function closeMobileMenu() {
   document.body.style.overflow = '';
 }
 
-mobileMenuBtn.addEventListener('click', () => {
-  if (mobileMenu.classList.contains('open')) closeMobileMenu();
-  else openMobileMenu();
-});
-mobileMenuClose.addEventListener('click', closeMobileMenu);
-mobileOverlay.addEventListener('click', closeMobileMenu);
+if (mobileMenuBtn) {
+  mobileMenuBtn.addEventListener('click', () => {
+    if (mobileMenu.classList.contains('open')) closeMobileMenu();
+    else openMobileMenu();
+  });
+}
+if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu);
+if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
 
-/* Close on Escape */
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileMenu(); });
 
 /* =============================================
-   WIDGET IFRAME — smooth wheel scroll & hide custom cursor
-   Hide custom cursor over iframe, forward wheel scroll to Lenis without freezing page scroll.
+   WIDGET IFRAME — smooth wheel scroll
    ============================================= */
 const widgetContainer = document.querySelector('.widget-glass-container');
 
 if (widgetContainer) {
-  widgetContainer.addEventListener('mouseenter', () => {
-    if (cursor)   cursor.style.opacity   = '0';
-    if (follower) follower.style.opacity = '0';
-  });
-
-  widgetContainer.addEventListener('mouseleave', () => {
-    if (cursor)   cursor.style.opacity   = '1';
-    if (follower) follower.style.opacity = '1';
-  });
-
   widgetContainer.addEventListener('wheel', (e) => {
     if (lenis) {
       lenis.scrollTo(lenis.scroll + e.deltaY * 0.85, { immediate: true });

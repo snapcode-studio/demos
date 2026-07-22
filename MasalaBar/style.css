@@ -33,29 +33,107 @@ img { display: block; max-width: 100%; }
 a  { color: inherit; }
 
 /* =============================================
-   CUSTOM CURSOR (desktop only)
+   DYNAMIC CURSOR & SHOCKWAVE SYSTEM (desktop)
    ============================================= */
 @media (pointer: fine) {
   body { cursor: none; }
   .cursor {
     width: 8px; height: 8px;
-    background: var(--gold);
+    background: #f5cf68;
+    box-shadow: 0 0 12px rgba(245, 207, 104, 0.9);
     border-radius: 50%;
     position: fixed; pointer-events: none;
-    z-index: 9999; transform: translate(-50%,-50%);
-    transition: width .3s, height .3s, background .3s;
+    z-index: 10001; transform: translate(-50%,-50%);
+    transition: width .25s ease, height .25s ease, background .25s ease, opacity .25s ease;
   }
   .cursor-follower {
-    width: 36px; height: 36px;
-    border: 1px solid var(--gold);
+    width: 38px; height: 38px;
+    border: 1.5px solid rgba(212, 175, 55, 0.7);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
     border-radius: 50%;
     position: fixed; pointer-events: none;
-    z-index: 9998; transform: translate(-50%,-50%);
-    transition: transform .1s ease-out, width .3s, height .3s;
+    z-index: 10000; transform: translate(-50%,-50%);
+    transition: transform .12s ease-out, width .3s ease, height .3s ease, border-color .3s ease, background .3s ease, box-shadow .3s ease, opacity .25s ease;
+  }
+
+  /* Expanded Follower state when hovering cards */
+  .cursor-follower.cursor-expanded {
+    width: 72px; height: 72px;
+    border: 2px solid rgba(245, 207, 104, 0.95);
+    background: rgba(212, 175, 55, 0.08);
+    box-shadow: 0 0 35px rgba(212, 175, 55, 0.7), inset 0 0 15px rgba(212, 175, 55, 0.3);
+    animation: followerPulseAura 1.8s infinite alternate ease-in-out;
+  }
+
+  .cursor.cursor-expanded {
+    width: 6px; height: 6px;
+    background: #ffffff;
+    box-shadow: 0 0 12px #ffffff;
   }
 }
+
+@keyframes followerPulseAura {
+  0% {
+    transform: translate(-50%,-50%) scale(1);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.6), inset 0 0 10px rgba(212, 175, 55, 0.2);
+  }
+  100% {
+    transform: translate(-50%,-50%) scale(1.18);
+    box-shadow: 0 0 45px rgba(255, 215, 0, 0.9), inset 0 0 20px rgba(255, 215, 0, 0.5);
+  }
+}
+
+/* Dynamic Expanding Shockwave Ring Elements */
+.cursor-shockwave {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(245, 207, 104, 0.95);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.8), inset 0 0 15px rgba(212, 175, 55, 0.5);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%) scale(0.5);
+  animation: shockwaveExpand 0.85s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+.cursor-shockwave.big-wave {
+  border-width: 3px;
+  border-color: rgba(255, 215, 0, 1);
+  box-shadow: 0 0 50px rgba(255, 215, 0, 0.9), inset 0 0 25px rgba(255, 215, 0, 0.6);
+  animation: shockwaveExpandBig 0.9s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+@keyframes shockwaveExpand {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(8);
+    opacity: 0;
+  }
+}
+
+@keyframes shockwaveExpandBig {
+  0% {
+    transform: translate(-50%, -50%) scale(0.4);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(14);
+    opacity: 0;
+  }
+}
+
 @media (pointer: coarse) {
-  .cursor, .cursor-follower { display: none; }
+  .cursor, .cursor-follower, .cursor-shockwave { display: none !important; }
 }
 
 /* =============================================
