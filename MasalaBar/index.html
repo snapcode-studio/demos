@@ -11,7 +11,7 @@
   <!-- Fonts: Cinzel for headings (elegant), Outfit for body (modern, readable) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -43,10 +43,14 @@
       <ul class="nav-links">
         <li><a href="#about" class="hover-line">O Nas</a></li>
         <li><a href="#gallery" class="hover-line">Galeria</a></li>
-        <li><a href="#menu" class="hover-line">Menu</a></li>
+        <li><a href="#menu" class="hover-line">Menu & Filtry</a></li>
+        <li><a href="#benefits" class="hover-line">Korzyści SnapMenu</a></li>
         <li><a href="#reviews" class="hover-line">Opinie</a></li>
       </ul>
-      <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="tel:+48324220000" class="btn-call-nav"><i class="fas fa-phone-alt"></i> 32 422 00 00</a>
+        <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+      </div>
     </div>
   </nav>
 
@@ -66,8 +70,8 @@
       <p class="animate-fade delay-1">Prawdziwie wegetariańska oaza. Zjedz smacznie, dostarcz organizmowi dobrej energii i poczuj magię orientu.</p>
       
       <div class="hero-actions animate-fade delay-2">
-        <a href="#menu" class="btn-primary">Karta Dań</a>
-        <a href="#about" class="btn-text">Odwiedź nas <i class="fas fa-arrow-right"></i></a>
+        <a href="tel:+48324220000" class="btn-primary call-hero-btn"><i class="fas fa-phone-alt"></i> Zadzwoń: 32 422 00 00</a>
+        <a href="#menu" class="btn-text">Zobacz Menu & Filtry <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
     
@@ -146,9 +150,9 @@
     
     <div class="container relative">
       <div class="text-center section-header">
-        <h4 class="section-subtitle">Menu</h4>
-        <h2 class="section-title">Sprawdź <span>Ofertę</span></h2>
-        <p class="section-desc">Zobacz co dziś przygotowaliśmy. Pysznie i w przystępnych cenach (20–40 zł).</p>
+        <h4 class="section-subtitle">Cyfrowe Menu Live</h4>
+        <h2 class="section-title">Sprawdź <span>Ofertę & Filtry</span></h2>
+        <p class="section-desc">Filtruj dania wegańskie, bezglutenowe i pikantne w czasie rzeczywistym.</p>
       </div>
 
       <div class="widget-showcase fade-up">
@@ -157,7 +161,6 @@
         <div class="float-element spice-1"><i class="fas fa-pepper-hot"></i></div>
         
         <div class="widget-glass-container" id="pitchWidgetContainer">
-          
           <!-- WIDGET EMBED (using explicit id query param for 100% reliability) -->
           <iframe 
             src="https://snapmenu-4ay.pages.dev/widget.html?id=masalabar" 
@@ -173,8 +176,49 @@
     </div>
   </section>
 
+  <!-- Business Benefits Section (Sales Value Pitch) -->
+  <section id="benefits" class="benefits-section section-padding bg-dark">
+    <div class="container">
+      <div class="text-center section-header">
+        <h4 class="section-subtitle">Korzyści Dla Biznesu</h4>
+        <h2 class="section-title">Dlaczego ten prototyp <span>zwiększa zyski</span>?</h2>
+        <p class="section-desc">Połączenie strony WWW z cyfrowym menu SnapMenu daje restauracji realną przewagę rynkową.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card fade-up">
+          <div class="benefit-icon"><i class="fas fa-bolt"></i></div>
+          <h3>Menu Dnia w 30 Sekund</h3>
+          <p>Właściciel zmienia danie dnia lub ceny ze smartfona w aplikacji SnapMenu. Bez informatyka i bez kosztów druku.</p>
+          <span class="benefit-tag">Rozwiązanie SnapMenu</span>
+        </div>
+
+        <div class="benefit-card fade-up" style="transition-delay: 0.1s;">
+          <div class="benefit-icon"><i class="fas fa-phone-alt"></i></div>
+          <h3>Wzrost Zamówień Telefonicznych</h3>
+          <p>Dedykowany przycisk szybkiego wyboru połączenia kieruje klientów bezpośrednio na telefon bez 30% prowizji pośredników.</p>
+          <span class="benefit-tag">0% Prowizji dla Aplikacji</span>
+        </div>
+
+        <div class="benefit-card fade-up" style="transition-delay: 0.2s;">
+          <div class="benefit-icon"><i class="fas fa-filter"></i></div>
+          <h3>Filtry Diety & Alergenów</h3>
+          <p>Natychmiastowe filtrowanie dań wegańskich, bezglutenowych i pikantnych podnosi konwersję i wygodę na telefonach.</p>
+          <span class="benefit-tag">Wygoda Mobile-First</span>
+        </div>
+
+        <div class="benefit-card fade-up" style="transition-delay: 0.3s;">
+          <div class="benefit-icon"><i class="fas fa-qrcode"></i></div>
+          <h3>Kody QR na Stoliki i Wynos</h3>
+          <p>Gotowy generator kodów QR na stojaczki i ulotki. Goście skanują kod telefonem bez pobierania żadnej aplikacji.</p>
+          <span class="benefit-tag">Gotowe do Druku</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Reviews Section -->
-  <section id="reviews" class="reviews section-padding bg-dark">
+  <section id="reviews" class="reviews section-padding">
     <div class="container">
       <h2 class="section-title text-center" style="margin-bottom: 4rem;">Oceny z <span>Google</span></h2>
       <div class="text-center" style="margin-bottom: 3rem;">
@@ -217,8 +261,6 @@
     </div>
   </section>
 
-
-
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -240,6 +282,7 @@
           <ul>
             <li><a href="#about">O Nas</a></li>
             <li><a href="#menu">Menu</a></li>
+            <li><a href="#benefits">Korzyści SnapMenu</a></li>
             <li><a href="#gallery">Zdjęcia</a></li>
           </ul>
         </div>
@@ -259,6 +302,16 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating Call & Order Bar -->
+  <div class="floating-order-bar">
+    <a href="tel:+48324220000" class="order-btn call-btn">
+      <i class="fas fa-phone-alt"></i> Zadzwoń: 32 422 00 00
+    </a>
+    <a href="#menu" class="order-btn menu-btn">
+      <i class="fas fa-utensils"></i> Menu & Filtry
+    </a>
+  </div>
 
   <script src="script.js"></script>
 </body>
