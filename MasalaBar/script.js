@@ -156,3 +156,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Copy Phone Number Logic
+const navCallBtn = document.getElementById('navCallBtn');
+const copyTooltip = document.getElementById('copyTooltip');
+
+if (navCallBtn) {
+  navCallBtn.addEventListener('click', (e) => {
+    const phoneNumber = "32 422 00 00";
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(phoneNumber).then(() => {
+        showCopyTooltip();
+      }).catch(() => {
+        showCopyTooltip();
+      });
+    } else {
+      const textarea = document.createElement('textarea');
+      textarea.value = phoneNumber;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      showCopyTooltip();
+    }
+  });
+}
+
+function showCopyTooltip() {
+  if (copyTooltip) {
+    copyTooltip.classList.add('show');
+    setTimeout(() => {
+      copyTooltip.classList.remove('show');
+    }, 2200);
+  }
+}
+
